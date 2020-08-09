@@ -1,0 +1,21 @@
+.main-footer {
+  color: white;
+  background-color: #57b2ea;
+  width: 100%;
+  bottom: 0;
+  position: relative;
+  padding: 4em;
+  margin-top: 5em;
+}
+.right {
+  position: absolute;
+  right: 0px;
+}
+.Margin_Bottom_FOR_MAIN {
+  margin-top: 2em;
+  font-size: 25px;
+  left: 0px;
+}
+.margin_top {
+  margin-top: 1em;
+}
