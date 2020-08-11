@@ -19,7 +19,7 @@ const App = () => {
     <BrowserRouter>
       <div className='container'>
         <Navigation />
-
+        <div></div>
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/about' component={About} exact />
