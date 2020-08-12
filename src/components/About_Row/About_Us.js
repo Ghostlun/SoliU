@@ -1,5 +1,5 @@
 import React from 'react';
-import First_Profile from './About_Us_First';
+import FirstProfile from './About_Us_First';
 const About_Us = () => {
   return (
     <div
@@ -11,13 +11,13 @@ const About_Us = () => {
       }}
     >
       <div>
-        <First_Profile />
+        <FirstProfile />
       </div>
       <div>
-        <First_Profile />
+        <FirstProfile />
       </div>
       <div>
-        <First_Profile />
+        <FirstProfile />
       </div>
     </div>
   );

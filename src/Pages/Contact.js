@@ -1,11 +1,13 @@
 import React from 'react';
 import Footer from '../components/Footer';
-import Main_Image from '../components/Main_Image';
+import MainImage from '../components/Main_Image';
+import ContactAll from '../components/Contact/Contact_All';
 
 const Contact = () => {
   return (
     <div>
-      <Main_Image />
+      <MainImage />
+      <ContactAll />
       <Footer />
     </div>
   );
