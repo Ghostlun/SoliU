@@ -1,9 +1,12 @@
 import React from 'react';
+import Footer from '../components/Footer';
+import Main_Image from '../components/Main_Image';
 
 const Contact = () => {
   return (
-    <div className='mt-5 d-flex justify-content-left'>
-      <h3>This is contact page</h3>
+    <div>
+      <Main_Image />
+      <Footer />
     </div>
   );
 };
