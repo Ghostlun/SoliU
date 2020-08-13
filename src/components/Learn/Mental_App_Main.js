@@ -43,15 +43,23 @@ const Mental_App_Main = () => {
         }}
       >
         <table>
-          <tr className='table'>
-            <Link to='/learn/mental_app/information'>LEARN</Link>
-
-            <Link to='/learn/mental_app/self_test'>SELF TEST</Link>
+          <tr>
+            <button>
+              <Link to='/learn/mental_app/information'>LEARN</Link>
+            </button>
+            <button>
+              <Link to='/learn/mental_app/self_test'>SELF TEST</Link>
+            </button>
           </tr>
-          <tr className='spacer'>
-            <Link to='/learn/mental_app/chat'>CHAT</Link>
-
-            <Link to='/learn/mental_app/resource_center'>RESOURCE CENTER</Link>
+          <tr>
+            <button>
+              <Link to='/learn/mental_app/chat'>CHAT</Link>
+            </button>
+            <button>
+              <Link to='/learn/mental_app/resource_center'>
+                RESOURCE CENTER
+              </Link>
+            </button>
           </tr>
         </table>
       </div>
