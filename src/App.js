@@ -14,6 +14,7 @@ import Learn from './Pages/Learn';
 import Navigation from './components/Navigation';
 import Lab from './Pages/Lab';
 import Contact from './Pages/Contact';
+import MentalAppMain from './components/Learn/Mental_App_Main';
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/' component={Home} exact />
           <Route path='/about' component={About} exact />
           <Route path='/learn' component={Learn} exact />
+          <Route path='/learn/mental_app' component={MentalAppMain} exact />
           <Route path='/lab' component={Lab} exact />
           <Route path='/contact' component={Contact} exact />
           <Route path='/error404' component={Error404} exact />

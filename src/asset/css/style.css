@@ -19,3 +19,13 @@
 .margin_top {
   margin-top: 1em;
 }
+.background_For_phone {
+  position: fixed;
+
+  width: 50%;
+
+  background-color: pink;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
