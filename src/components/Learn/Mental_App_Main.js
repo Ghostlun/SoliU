@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import Brain from './Mental_App_Brain';
 import '../../asset/css/style.css';
 const Mental_App_Main = () => {
+
+  
+
+  
+
+
   return (
     <div className='background_For_phone'>
       <div>

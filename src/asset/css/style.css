@@ -37,7 +37,7 @@
 .Mental_App_button {
   background-color: #3975ab;
   width: 400;
-  border: none;
+  border-color: black;
   margin-top: 10;
   font-size: 16px;
   color: white;
