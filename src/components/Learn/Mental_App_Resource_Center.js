@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  width: '80%',
+  width: '75%',
   height: '100%'
 };
 class Mental_App_Resource_Center extends Component {
@@ -10,13 +10,19 @@ class Mental_App_Resource_Center extends Component {
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={13}
         style={mapStyles}
         initialCenter={{
           lat: 32.620892,
           lng: -85.405405
         }}
-      />
+      >
+        <Marker position={{ lat: 32.620892, lng: -85.405405 }}></Marker>
+        <Marker
+          position={{ lat: 32.62727, lng: -85.461105 }}
+          label='hidddddddd'
+        ></Marker>
+      </Map>
     );
   }
 }
