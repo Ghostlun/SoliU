@@ -10,7 +10,9 @@ const First_Main = () => {
           justifyContent: 'center',
           alignItems: 'center'
         }}
+        
       >
+        <div> nicd</div>
         <img
           src={Logo}
           alt='logo'
