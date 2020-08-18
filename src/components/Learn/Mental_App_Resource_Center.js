@@ -17,10 +17,25 @@ class Mental_App_Resource_Center extends Component {
           lng: -85.405405
         }}
       >
-        <Marker position={{ lat: 32.620892, lng: -85.405405 }}></Marker>
+        <Marker
+          position={{ lat: 32.620892, lng: -85.405405 }}
+          label='East Alabama Mental Health'
+        ></Marker>
         <Marker
           position={{ lat: 32.62727, lng: -85.461105 }}
-          label='hidddddddd'
+          label='Alabama Center for Trauma Therapy'
+        ></Marker>
+        <Marker
+          position={{ lat: 32.589056, lng: -85.326372 }}
+          label='East Al Mental Health'
+        ></Marker>
+        <Marker
+          position={{ lat: 32.582156, lng: -85.440807 }}
+          label='Dunn Psychological Services, LLC'
+        ></Marker>
+        <Marker
+          position={{ lat: 32.6047, lng: -85.489834 }}
+          label='Auburn University Psychological'
         ></Marker>
       </Map>
     );

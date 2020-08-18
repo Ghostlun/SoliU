@@ -15,6 +15,7 @@ const About = () => {
       <div>
         <Third />
       </div>
+      <div></div>
     </div>
   );
 };
