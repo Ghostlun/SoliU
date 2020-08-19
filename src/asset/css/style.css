@@ -42,3 +42,33 @@
   font-size: 16px;
   color: white;
 }
+.RESEARCH {
+  width: 153px;
+  height: 24px;
+  font-family: AppleGothic;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.12px;
+  text-align: left;
+  color: #21385e;
+}
+.rowC {
+  display: flex;
+  flex-direction: row;
+}
+.Our-researches-mainly-focused-on-three-area-1-Risk-Crisis-C {
+  width: 365px;
+  height: 110px;
+  font-family: Avenir-Roman;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: 0.07px;
+  text-align: justify;
+  color: #000000;
+}

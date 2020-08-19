@@ -28,7 +28,7 @@ class Navigation extends Component {
             </NavLink>
             <NavLink
               className='d-inline p-2 bg-white text-black'
-              to='/publicaions'
+              to='/publications'
             >
               PUBLICATIONS
             </NavLink>

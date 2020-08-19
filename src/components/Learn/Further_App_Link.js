@@ -6,9 +6,7 @@ const Further_App_Link = () => {
     <Fragment>
       <div className='play-button-container'>
         <ul>
-          <li>
-            <Link to='research/others'>other App</Link>
-          </li>
+          <Link to='research/others'>other App</Link>
         </ul>
       </div>
     </Fragment>
