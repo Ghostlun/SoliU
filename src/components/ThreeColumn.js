@@ -4,40 +4,53 @@ import Second from '../components/Main_Column/Second_Main';
 import Third from '../components/Main_Column/Third_Main';
 const ThreeColumn = () => {
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gridGap: 20,
-        padding: 30
-      }}
-    >
+    <div>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          color: '#3975ab',
+          marginTop: '2em'
         }}
       >
-        <First />
+        <center>
+          <h1>"We address, communicate and solve social issues"</h1>
+        </center>
       </div>
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridGap: 20,
+          padding: 10,
+          marginTop: '-4em'
         }}
       >
-        <Second />
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-        <Third />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <First />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Second />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Third />
+        </div>
       </div>
     </div>
   );

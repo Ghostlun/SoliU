@@ -3,15 +3,10 @@ import { Link } from 'react-router-dom';
 import Brain from './Mental_App_Brain';
 
 import '../../asset/css/style.css';
+
 const Mental_App_Main = () => {
-
-  
-
-  
-
-
   return (
-    <div className='background_For_phone'>
+    <div>
       <div>
         <h1
           style={{
@@ -52,18 +47,18 @@ const Mental_App_Main = () => {
         <table>
           <tr>
             <button>
-              <Link to='/learn/mental_app/information'>LEARN</Link>
+              <Link to='/research/mental_app/information'>LEARN</Link>
             </button>
             <button>
-              <Link to='/learn/mental_app/self_test'>SELF TEST</Link>
+              <Link to='/research/mental_app/self_test'>SELF TEST</Link>
             </button>
           </tr>
           <tr>
             <button>
-              <Link to='/learn/mental_app/chat'>CHAT</Link>
+              <Link to='/research/mental_app/chat'>CHAT</Link>
             </button>
             <button>
-              <Link to='/learn/mental_app/resource_center'>
+              <Link to='/research/mental_app/resource_center'>
                 RESOURCE CENTER
               </Link>
             </button>
