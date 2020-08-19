@@ -3,7 +3,7 @@ import mentalData from '../data.json';
 import '../../asset/css/style.css';
 import { Row } from 'react-bootstrap';
 
-export default class Mental_issue_info extends Component {
+export default class Mental_Comp_info extends Component {
   constructor(props) {
     super(props);
     this.state = {

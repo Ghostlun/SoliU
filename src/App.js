@@ -17,6 +17,7 @@ import Contact from './Pages/Contact';
 import MentalAppMain from './components/Learn/Mental_App_Main';
 import MentalAppInfo from './components/Learn/Mental_App_Info';
 import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Center';
+import MentalAppChat from './components/Learn/Mental_App_Chat'
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,6 +25,8 @@ const App = () => {
         <Navigation />
 
         <Switch>
+
+          {/* Swith Path for component */}
           <Route path='/' component={Home} exact />
           <Route path='/about' component={About} exact />
           <Route path='/learn' component={Learn} exact />
@@ -38,6 +41,13 @@ const App = () => {
             component={MentalAppResourceCenter}
             exact
           />
+          <Route
+          path = '/learn/mental_app/chat' 
+          component ={MentalAppChat} 
+          exact/>
+
+
+          
           <Route path='/lab' component={Lab} exact />
           <Route path='/contact' component={Contact} exact />
           <Route path='/error404' component={Error404} exact />
