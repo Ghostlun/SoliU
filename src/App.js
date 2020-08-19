@@ -16,6 +16,7 @@ import PUBLICATIONS from './Pages/Publications';
 import Contact from './Pages/Contact';
 import MentalAppMain from './components/Learn/Mental_App_Main';
 import MentalAppInfo from './components/Learn/Mental_App_Info';
+import MentalAppSelfTestMain from './components/Learn/Mental_App_Self_Test_Main';
 import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Center';
 import MEMBERS from './Pages/Members';
 //research ->learn
@@ -34,6 +35,11 @@ const App = () => {
           <Route
             path='/research/mental_app/information'
             component={MentalAppInfo}
+            exact
+          />
+          <Route
+            path='/research/mental_app/self_test'
+            component={MentalAppSelfTestMain}
             exact
           />
           <Route

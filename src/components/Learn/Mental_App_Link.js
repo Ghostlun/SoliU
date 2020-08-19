@@ -5,7 +5,7 @@ const Mental_App_Link = () => {
     <Fragment>
       <div className='play-button-container'>
         <ul>
-          <Link to='research/mental_app'>How Are You</Link>
+          <Link to='research/mental_app'>Mental Health</Link>
         </ul>
       </div>
     </Fragment>
