@@ -32,10 +32,10 @@ const First_Main = () => {
         MENTAL HEALTHCARE APP
       </div>
       <div>
-        We are a research group daifaoisdfjf oisadfjf io oidffd afjofadijd
-        dsoaifjfaoidsfjfaiodjfi sdoifjoiadfjioadsfjaiod sdo djfaosi sdoifjoai
-        dsofijaoi dfjaoi dsifjaoidfj sdfijao idfffasf fdfdf
-        rjafdasifojfadosifjfadiofjdisaofjf disfjaodsffjodf
+        Currently, we have focused mental health issues in the time of COVID-19
+        and developed an app (How Are U?) to help students who have anxiety or
+        depression by decreasing stigma and increase accessibility to approach
+        health resources.
       </div>
       <div
         style={{
