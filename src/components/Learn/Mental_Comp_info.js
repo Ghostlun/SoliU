@@ -30,8 +30,15 @@ export default class Mental_Comp_info extends Component {
   };
 
   Menu_button_Clicked = () => {
+   
+    if (this.state.Mouseclicked = 'false') {
+
+      window.history.back();
+    }
     this.setState({ Mouseclicked: 'false' });
 
+
+  
     console.log('to the Menu');
   };
 
@@ -39,7 +46,6 @@ export default class Mental_Comp_info extends Component {
     if (this.state.Mouseclicked === 'false')
       return (
         <div>
-          <center>
             {mentalData.map(c => {
               return (
                 <button
@@ -49,10 +55,10 @@ export default class Mental_Comp_info extends Component {
                 >
                   {' '}
                   {c.Name}
+                  <br></br>
                 </button>
               );
             })}
-          </center>
         </div>
       );
     else return <div>{this.state.Mental_Info}</div>;
@@ -60,30 +66,16 @@ export default class Mental_Comp_info extends Component {
 
   render() {
     return (
-      <div className='background_For_phone'>
-        <div>
-          <div
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              display: 'flex'
-            }}
-          >
+          <div>
             {/* Get data from */}
-            <table>
-              <thead>
-                <th>Learn about Mental Illness</th>
-              </thead>
-            </table>
+              <h4> Learn about Mental Illness</h4>
 
             {this.displayMenu()}
-          </div>
 
           <button onClick={() => this.Menu_button_Clicked()}>
-            To the menu
+          To the menu
           </button>
-        </div>
-      </div>
+          </div>
     );
   }
 }

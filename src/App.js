@@ -20,6 +20,7 @@ import MentalAppSelfTestMain from './components/Learn/Mental_App_Self_Test_Main'
 import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Center';
 import MentalAppChat from './components/Learn/Mental_App_Chat'
 import MEMBERS from './Pages/Members';
+
 //research ->learn
 const App = () => {
   return (
@@ -51,8 +52,13 @@ const App = () => {
             exact
           />
           <Route
-          path = '/learn/mental_app/chat' 
+          path = '/research/mental_app/chat' 
           component ={MentalAppChat} 
+          exact/>
+
+          <Route
+          path = '/contact' 
+          component ={Contact} 
           exact/>
 
 

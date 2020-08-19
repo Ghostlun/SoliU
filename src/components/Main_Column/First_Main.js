@@ -15,7 +15,6 @@ const First_Main = () => {
         }}
         
       >
-        <div> nicd</div>
         <img
           src={Logo}
           alt='logo'

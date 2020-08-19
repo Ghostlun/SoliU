@@ -75,3 +75,28 @@
   text-align: justify;
   color: #000000;
 }
+
+.CONTACT-US {
+  width: 250px;
+  height: 21px;
+  font-family: Avenir-Roman;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.12px;
+  text-align: left;
+  color: #21385e;
+  margin-top: 50px;
+}
+.submit-icon {
+  width: 220px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.info {
+
+  
+}
