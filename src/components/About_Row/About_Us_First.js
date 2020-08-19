@@ -1,5 +1,5 @@
 import React from 'react';
-import Pic from '../../asset/image/picture.png';
+import Pic from '../../asset/image/yoonkim.png';
 const About_Us_First = () => {
   return (
     <div>
@@ -12,20 +12,20 @@ const About_Us_First = () => {
       >
         <img
           src={Pic}
-          alt='Picture'
+          alt='Pic'
           style={{
-            width: '250px'
+            width: '300px'
           }}
         />
       </div>
       <div>
-        <h3>Minju Jo</h3>
-        <h4>Web/App Designer</h4>
-        <h6>Auburn University 21’ </h6>
-        <h6> Environmental design major Psychology major</h6>
+        <h3>Yoonha Kim</h3>
+        <h4>Web/App Developer</h4>
+        <h6>Auburn University 23’ </h6>
+        <h6> Computer Science major</h6>
 
-        <h6> mzj0038@auburn.edu </h6>
-        <h6> 334) 306-0891</h6>
+        <h6> yzk0062@auburn.edu </h6>
+        <h6> 334) 306-0847</h6>
       </div>
     </div>
   );
