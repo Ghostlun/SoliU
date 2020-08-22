@@ -1,5 +1,5 @@
 import React from 'react';
-import Professor from '../../asset/image/Dr_Chon.jpg';
+import Professor from '../../asset/image/Dr_Chon.png';
 
 const About_Professor = () => {
   return (
