@@ -14,8 +14,8 @@ class Navigation extends Component {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav '>
           <Nav className='right'>
-            <NavLink className='d-inline p-2 bg-white text-black' to='/about'>
-              ABOUT
+            <NavLink className='d-inline p-2 bg-white text-black' to='/'>
+              HOME
             </NavLink>
             <NavLink className='d-inline p-2 bg-white text-black' to='/members'>
               MEMBERS
