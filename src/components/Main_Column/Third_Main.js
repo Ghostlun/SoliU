@@ -3,6 +3,7 @@ import Covid_Pic from '../../asset/image/covid_19.png';
 import GuideLine from '../../asset/image/guideline.png';
 import Apple from '../../asset/image/app_store.png';
 import Google from '../../asset/image/google_play_store.png';
+import Covid19Auburn from '../../asset/image/covid19.png'
 import '../../asset/css/style.css';
 
 const Third_Main = () => {
@@ -12,11 +13,22 @@ const Third_Main = () => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          marginTop : "80px"
         }}
       >
         <a href='https://www.cdc.gov/coronavirus/2019-ncov/index.html'>
           <img src={Covid_Pic} alt='Covid_Pic' style={{ width: '300px' }} />
+        </a>
+
+        
+      </div>
+
+        <br></br>
+      <div>
+
+      <a href='https://ocm.auburn.edu/newsroom/campus_notices/2020/08/211533-covid-resource-center.php?nlan'>
+          <img src={Covid19Auburn} alt='Covid_Pic' style={{ width: '300px' }} />
         </a>
       </div>
       <div
@@ -26,7 +38,7 @@ const Third_Main = () => {
           color: '#21385e'
         }}
       >
-        DOWNLOAD
+        DOWNLOAD (Beta version)
       </div>
 
       <div>

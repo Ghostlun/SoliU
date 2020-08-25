@@ -16,11 +16,16 @@ const Publications = () => {
 
     <br></br>
     <div>
-    <h3><b>Publications</b></h3>
-  </div>
-    <div style = {{marginLeft : 10}}> <pre></pre>His primary research interests lie in Risk-Crisis Management, Strategic Communication, Health Communication, and Public Diplomacy. His research interests have been developed by understanding how issues are presented in media and communicative behaviors of publics to solve public relations and health issues. He focuses on issues and crisis communication, organizational-public relationship (OPR), employee communication behavior (ECB), and social activism in the networked society. He also expands his research interest to public diplomacy by exploring how public relations theories can be applied into public diplomacy issues. 
-   
+    <h1><b>Publications</b></h1>
+    <h4><b>Current Research</b></h4>
+   <div><h5><b>Title: </b> Mental health issues and mobile healthcare: the effects of chatting app to increase accessibility and engagement of health resources on college campus </h5>
+   <div><h5><b>Purpose: </b> This study is to examine the role of mobile application to increase accessibility and engagement of health resources</h5>
+   </div>
+
+    <a href="More Info">More Infoformation</a> 
     </div>
+  </div>
+ 
 
     <br></br>
     <br></br>
@@ -34,6 +39,8 @@ const Publications = () => {
 <h4><b>Journal Articles</b></h4>
     <div style = {{margin : 10  
 }}>
+
+
   <div>Chon, M. & Park, H. (2020). Social media activism in the digital age: Testing an integrative model of activism on contentious issues. Journalism & Mass Communication Quarterly 97(1) 72-97.
   <a href=" https://doi.org/10.1177/1077699019835896"style ={{marginLeft : 10}}>link</a> </div>
   <br></br>
@@ -46,6 +53,12 @@ const Publications = () => {
   <div>Chon, M. (2019). Government public relations when trouble hits: exploring political dispositions, situational variables, and government–public relationships to predict communicative action of publics. Asian Journal of Communication, 29(5), 424-440,
   <a href="  10.1080/01292986.2019.1649438" style ={{marginLeft : 10}} >link</a> </div>
   <br></br>
+
+
+
+  <div>Chon, M. & Park, H. (2017). All does not fit all: Health audience segmentation and prediction of health behaviors in cancer prevention. Health Marketing Quarterly, 34, pp. 202-216.</div>
+ <div> <a href="http://dx.doi.org/10.1080/07359683.2017.1346434  " style ={{marginLeft : 10}} >link</a> </div>
+
 
   <div>Chon, M. & Park, H. (2019). Predicting public support for government actions in a public health crisis: Testing fear, positive organization-public relationship, and behavioral intention in the framework of the situational theory of problem solving. Health Communication. Online First.
   <a href="https://doi.org/10.1080/10410236.2019.1700439" style ={{marginLeft : 10}}>link</a> </div>

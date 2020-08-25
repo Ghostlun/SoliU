@@ -12,36 +12,62 @@ export default class Comp_Contact extends Component {
 
   super(props)
   
-  this.state = { name : null, phone : null, email :null}
+  this.state = { name : null, comment : null, email :null, 
+  emailSent: "false"}
 
  }
 
+
+emailConfirmation = () => {
+
+  if (this.state.emailSent == "true") 
+  return <div><center>Your email is delivered </center></div>
+
+  else return <div></div>
+}
+
+
+
 handleChange = (e) => {
 
-  this.setState({[e.target.name] : e.target.value})
-  console.log("Check the change", e.target.name)
+  let nam =  e.target.name;
+  let val = e.target.value;
+  // let pho = e.target.phone;
+
+  this.setState({ [nam] : val})
+  console.log("Check the change for name", this.state.name)
+  console.log("Check the change for email", this.state.email)
+  console.log("Check the change for comment", this.state.comment)
+
 }
 
 handleSubmit = (e) => {
 
   e.preventDefault();
 
-  emailjs.sendForm (
+  emailjs
+    .sendForm ("gmail","test", e.target, "user_64cUFNeBdOXAD4QZWBXWY"
+  ).then(res => {
 
-    "gmail",
-    "test",
-    "className",
-    "user_64cUFNeBdOXAD4QZWBXWY"
-  ).then()
-  .catch(); 
-  this.setState({
-    name:"",
-    phone: "",
-    email: ""
+    this.setState({
+      email: "",  
+      name: "",
+      comment: "",
+      emailSent: "true"
+    })
+
+    document.getElementById("formID").reset()
+    
+
+    console.log("It sent sucessuflly")
+    
   })
-}
+  .catch(err => {"Something error happnes"}); 
  
 
+  console.log("Submit button ", this.state.name)
+}
+ 
 
 
 
@@ -52,19 +78,24 @@ handleSubmit = (e) => {
       {/* Get data from */}
       <br></br>
       <div className="CONTACT-US" style={{ marginTop: "50px" }}> CONTACT US </div> <br></br>
-      <form onSubmit={this.handleSubmit}>
-      <p><input type='text' placeholder="first" name="name"  value = {this.state.name} onChange={this.handleChange} /> </p>
+
+      <form onSubmit = {this.handleSubmit} id = "formID">
+      <div className="CONTACT-US">Name </div>
+      <br></br>
+
+      <input type='text' placeholder="first" name="name"  onChange={this.handleChange} />
 
       <div className="CONTACT-US"> E-mail </div><br></br>
-      <p><input type='text' placeholder="Email" name="email" size="80" onChange={this.handleChange} value = {this.state.email} /> </p>
+      <input type='text' placeholder="Email" name="email"   size="80" onChange={this.handleChange} /> 
 
 
       <div className="CONTACT-US"> Comment</div><br></br>
-        <p><input type='text' placeholder="Comment" name="phone" size="80" style={{ height: "300" }}  value = {this.state.phone} onChange={this.handleChange} /> </p>
+      <input type='text' placeholder="comment" name="comment"  size="80" style={{ height: "300" }}  onChange={this.handleChange} />
      
+
+       <input type="submit" value ="submit"/>
       </form>
 
-      <button className="submit-icon">Submit</button>
 
 
     </div>
@@ -78,7 +109,7 @@ handleSubmit = (e) => {
     return <div>
       {/* Get data from */}
       <br></br>
-      <div className="CONTACT-US" style={{ marginTop: "90px" }}> Get in Touch</div> <br></br>
+      <div className="CONTACT-US" style={{ marginTop: "90px" }}>Get in Touch</div> <br></br>
 
 
       <div className="CONTACT-US"> Address </div><br></br>
@@ -108,7 +139,8 @@ handleSubmit = (e) => {
 
     return (
 
-
+      <div>
+        {this.emailConfirmation()}
       <div
         style={{
           display: 'grid',
@@ -139,6 +171,8 @@ handleSubmit = (e) => {
         >
         </div>
         {this.seconeLine()}
+      </div>
+
       </div>
     );
 
