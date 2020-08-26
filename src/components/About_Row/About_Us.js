@@ -2,7 +2,7 @@ import React from 'react';
 import FirstProfile from './About_Us_Yoonha';
 import SecondProfile from './About_Us_Jungpyo';
 import ThridProfile from './About_Us_Minjoo';
-import FourthProfile from './About_Us_Dahae';
+import FourthProfile from './About_Us_Dahye';
 import FifthhProfile from './About_Us_Yeonseo';
 import SixthProfile from './About_Us_Joonha';
 const About_Us = () => {

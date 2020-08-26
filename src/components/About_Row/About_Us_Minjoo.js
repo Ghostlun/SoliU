@@ -1,6 +1,6 @@
 import React from 'react';
 import Pic from '../../asset/image/minjoo_Jo.png';
-const About_Us_First = () => {
+const About_Us_Minjoo = () => {
   return (
     <div>
       <div>
@@ -25,4 +25,4 @@ const About_Us_First = () => {
   );
 };
 
-export default About_Us_First;
+export default About_Us_Minjoo;

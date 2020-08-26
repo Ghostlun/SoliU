@@ -1,6 +1,6 @@
 import React from 'react';
 import Pic from '../../asset/image/jungpyo_Hong.png';
-const About_Us_Second = () => {
+const About_Us_Jungpyo = () => {
   return (
     <div>
       <div>
@@ -25,4 +25,4 @@ const About_Us_Second = () => {
   );
 };
 
-export default About_Us_Second;
+export default About_Us_Jungpyo;
