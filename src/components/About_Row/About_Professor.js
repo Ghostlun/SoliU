@@ -14,9 +14,12 @@ const About_Professor = () => {
         />
       </div>
       <div className='column ml-5'>
-        <h3>Myoung-Gi Chon</h3>
-        <h3>(Group Leader)</h3>
-        <h3>more info here</h3>
+        <h3>Myoung-Gi Chon, Ph.D.</h3>
+        <h4>Assistant Professor</h4>
+        <h4>School of Communication and Journalism at Auburn University</h4>
+        <br></br>
+    <a href="https://cla.auburn.edu/cmjn/public-relations/faculty/myoung-gi-chon/">More information</a>
+
       </div>
     </div>
   );

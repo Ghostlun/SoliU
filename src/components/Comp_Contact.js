@@ -1,83 +1,147 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import '../asset/css/style.css';
+import * as emailjs from "emailjs-com"
 
 
 
 
 export default class Comp_Contact extends Component {
 
+ constructor(props) {
+
+  super(props)
   
+  this.state = { name : null, comment : null, email :null, 
+  emailSent: "false"}
 
-    firstLine = () => {
-
-
-        return  <div>
-        {/* Get data from */}
-        <br></br>
-        <div className = "CONTACT-US" style = {{marginTop : "50px"}}> CONTACT US </div> <br></br>
-        <form onSubmit = {this.handleSubmit}>
-         <p><input type = 'text' placeholder = "first" name = "first" onChange = {this.handleInputChange}/> </p>
-          </form> 
-       
-        <div className = "CONTACT-US"> E-mail </div><br></br>
-        <form onSubmit = {this.handleSubmit}>
-         <p><input type = 'text' placeholder = "Email" name = "Email" size = "80    " onChange = {this.handleInputChange}/> </p>
-        </form> 
+ }
 
 
-        <div className = "CONTACT-US"> Comment</div><br></br>
-        <form onSubmit = {this.handleSubmit}>
-        <p><input type = 'text' placeholder = "Comment" name = "Comment" size = "80" style ={{height :   "300"}} onChange = {this.handleInputChange}/> </p>
-        </form> 
-    
-        <button className = "submit-icon">Submit</button>
+emailConfirmation = () => {
 
-        
+  if (this.state.emailSent == "true") 
+  return <div><center>Your email is delivered </center></div>
 
-  </div>
-    }
-
-    seconeLine = () => {
-
-         
+  else return <div></div>
+}
 
 
-        return  <div>
-        {/* Get data from */}
-        <br></br>
-        <div className = "CONTACT-US" style = {{marginTop : "90px"}}> Get in Touch</div> <br></br>
-      
-       
-        <div className = "CONTACT-US"> Address </div><br></br>
-         <div className = "info" > School of Communication and Journalism 
-             Auburn University
-        <br></br>
-        <br></br>
 
-237 Tichenor Hall 
-Auburn AL 36849-5206</div>
+handleChange = (e) => {
 
-        <div className = "CONTACT-US"> Join the team</div><br></br>
-        <p> Dr. Myoung-Gi Chon <br></br>
-Tel: 33-844-2721 <br></br>
-mzc0113@auburn.edu
-</p>
+  let nam =  e.target.name;
+  let val = e.target.value;
+  // let pho = e.target.phone;
+
+  this.setState({ [nam] : val})
+  console.log("Check the change for name", this.state.name)
+  console.log("Check the change for email", this.state.email)
+  console.log("Check the change for comment", this.state.comment)
+
+}
+
+handleSubmit = (e) => {
+
+  e.preventDefault();
+
+  emailjs
+    .sendForm ("gmail","test", e.target, "user_64cUFNeBdOXAD4QZWBXWY"
+  ).then(res => {
+
+    this.setState({
+      email: "",  
+      name: "",
+      comment: "",
+      emailSent: "true"
+    })
+
+    document.getElementById("formID").reset()
     
 
-        
-
-  </div>
-    }
-   
+    console.log("It sent sucessuflly")
     
+  })
+  .catch(err => {"Something error happnes"}); 
+ 
 
-    render() {
+  console.log("Submit button ", this.state.name)
+}
+ 
 
-        return (
 
 
-        <div
+  firstLine = () => {
+
+
+    return <div>
+      {/* Get data from */}
+      <br></br>
+      <div className="CONTACT-US" style={{ marginTop: "50px" }}> CONTACT US </div> <br></br>
+
+      <form onSubmit = {this.handleSubmit} id = "formID">
+      <div className="CONTACT-US">Name </div>
+      <br></br>
+
+      <input type='text' placeholder="first" name="name"  onChange={this.handleChange} />
+
+      <div className="CONTACT-US"> E-mail </div><br></br>
+      <input type='text' placeholder="Email" name="email"   size="80" onChange={this.handleChange} /> 
+
+
+      <div className="CONTACT-US"> Comment</div><br></br>
+      <input type='text' placeholder="comment" name="comment"  size="80" style={{ height: "300" }}  onChange={this.handleChange} />
+     
+
+       <input type="submit" value ="submit"/>
+      </form>
+
+
+
+    </div>
+  }
+
+  seconeLine = () => {
+
+
+
+
+    return <div>
+      {/* Get data from */}
+      <br></br>
+      <div className="CONTACT-US" style={{ marginTop: "90px" }}>Get in Touch</div> <br></br>
+
+
+      <div className="CONTACT-US"> Address </div><br></br>
+      <div className="info" > School of Communication and Journalism
+      Auburn University
+        <br></br>
+        <br></br>
+
+        237 Tichenor Hall
+        Auburn AL 36849-5206</div>
+
+      <div className="CONTACT-US"> Join the team</div><br></br>
+      <p> Dr. Myoung-Gi Chon <br></br>
+      Tel: 33-844-2721 <br></br>
+      mzc0113@auburn.edu
+      </p>
+
+
+
+
+    </div>
+  }
+
+
+
+  render() {
+
+    return (
+
+      <div>
+        {this.emailConfirmation()}
+      <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -93,12 +157,12 @@ mzc0113@auburn.edu
             alignItems: 'center'
           }}
         >
-            {this.firstLine()}      
-          </div>
+          {this.firstLine()}
+        </div>
 
 
-        
-          <div
+
+        <div
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -106,11 +170,13 @@ mzc0113@auburn.edu
           }}
         >
         </div>
-          {this.seconeLine()}
-          </div>
-        );
+        {this.seconeLine()}
+      </div>
 
-    }
+      </div>
+    );
 
-    
+  }
+
+
 }

@@ -39,7 +39,7 @@ const Learn = () => {
         </div>
         <div className='ml-5'>
           <text>
-            <h5>Our researches mainly focused on three area.</h5>
+            <h5>Our researches mainly focused on three areas.</h5>
             <h5> 1. Risk-Crisis Communication</h5>
             <h5> 2. Health Communication </h5>
             <h5> 3. Social Media Activism    </h5> 
