@@ -96,7 +96,35 @@
   object-fit: contain;
 }
 
-.info {
+.container_for_Mental_Main {
+  margin-top: 10px;
+  width: 700px;
+  max-width: 50%;
+  height: 500px;
+  max-height: 70%;
+  padding: 10px;
+  border: solid 5px #3975ab;
+  background-color: #ffffff;
 
-  
+  box-shadow: 2px 2px 10px 2px;
+  border-radius: 20px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+  align-content: center;
+  justify-content: center;
+}
+.btn-mental-main {
+  border: none;
+  background-color: #448aca;
+}
+.btn_self_test {
+  margin-top: 30px;
+  width: 200px;
+  background-color: #448aca;
+  border: none;
 }

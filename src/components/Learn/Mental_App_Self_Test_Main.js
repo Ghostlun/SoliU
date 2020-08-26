@@ -1,10 +1,11 @@
 import React from 'react';
 import SelfPic from '../../asset/image/selftest.png';
+import '../../asset/css/style.css';
 const Mental_App_Self_Test_Main = () => {
   return (
-    <div>
-      <center>
-        <h1>SelfTest</h1>
+    <center>
+      <div className='container_for_Mental_Main'>
+        <h1>Self-Test</h1>
         <h5>
           This is a questionaire test for diagnosing, monitoring, and measuring
           the severity of depression.
@@ -13,14 +14,19 @@ const Mental_App_Self_Test_Main = () => {
           src={SelfPic}
           alt='SelfPic'
           style={{
-            width: '300px',
+            width: '250px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center'
           }}
         />
-      </center>
-    </div>
+        <div>
+          <button className='btn_self_test'>
+            <text style={{ color: 'white' }}>TAKE TEST</text>
+          </button>
+        </div>
+      </div>
+    </center>
   );
 };
 

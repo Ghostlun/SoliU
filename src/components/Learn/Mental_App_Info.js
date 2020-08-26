@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../asset/css/style.css';
-import Mental_info from './Mental_Comp_info';
+import MentalInfo from './Mental_Comp_info';
 
 const Mental_App_Info = () => {
-
-  
   // Call Mental info information
-  return <div> <center>
-    <Mental_info />
-    </center></div>
+  return (
+    <center>
+      <div className='container_for_Mental_Main'>
+        <MentalInfo />
+      </div>
+    </center>
+  );
 };
 
 export default Mental_App_Info;
