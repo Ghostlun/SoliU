@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdf1a452.chunk.css",
-    "main.js": "/static/js/main.76455a38.chunk.js",
-    "main.js.map": "/static/js/main.76455a38.chunk.js.map",
+    "main.css": "/static/css/main.7a2b6358.chunk.css",
+    "main.js": "/static/js/main.23fb1de6.chunk.js",
+    "main.js.map": "/static/js/main.23fb1de6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c9a43d2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.c9a43d2d.js.map",
     "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
-    "static/js/2.81425e4a.chunk.js": "/static/js/2.81425e4a.chunk.js",
-    "static/js/2.81425e4a.chunk.js.map": "/static/js/2.81425e4a.chunk.js.map",
+    "static/js/2.b5a7352e.chunk.js": "/static/js/2.b5a7352e.chunk.js",
+    "static/js/2.b5a7352e.chunk.js.map": "/static/js/2.b5a7352e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7615a8acfd47909286acef487b2b1d44.js": "/precache-manifest.7615a8acfd47909286acef487b2b1d44.js",
+    "precache-manifest.ee4cfeb5ddb59b78490c620dcd5dc61f.js": "/precache-manifest.ee4cfeb5ddb59b78490c620dcd5dc61f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
-    "static/css/main.cdf1a452.chunk.css.map": "/static/css/main.cdf1a452.chunk.css.map",
-    "static/js/2.81425e4a.chunk.js.LICENSE.txt": "/static/js/2.81425e4a.chunk.js.LICENSE.txt",
+    "static/css/main.7a2b6358.chunk.css.map": "/static/css/main.7a2b6358.chunk.css.map",
+    "static/js/2.b5a7352e.chunk.js.LICENSE.txt": "/static/js/2.b5a7352e.chunk.js.LICENSE.txt",
     "static/media/Dr_Chon.png": "/static/media/Dr_Chon.0a7ac967.png",
     "static/media/app_store.png": "/static/media/app_store.832effe0.png",
     "static/media/auburn_logo.png": "/static/media/auburn_logo.be25665b.png",
     "static/media/auburn_logo_2.png": "/static/media/auburn_logo_2.65ab15fc.png",
     "static/media/brain.png": "/static/media/brain.1f249520.png",
+    "static/media/covid19.png": "/static/media/covid19.42ffb3cb.png",
     "static/media/covid_19.png": "/static/media/covid_19.3e512007.png",
     "static/media/dahae_Kim.png": "/static/media/dahae_Kim.9f664cd0.png",
     "static/media/diagram.png": "/static/media/diagram.7290c0eb.png",
@@ -39,8 +40,8 @@
   "entrypoints": [
     "static/js/runtime-main.c9a43d2d.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.81425e4a.chunk.js",
-    "static/css/main.cdf1a452.chunk.css",
-    "static/js/main.76455a38.chunk.js"
+    "static/js/2.b5a7352e.chunk.js",
+    "static/css/main.7a2b6358.chunk.css",
+    "static/js/main.23fb1de6.chunk.js"
   ]
 }
