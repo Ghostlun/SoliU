@@ -62,6 +62,7 @@ handleSubmit = (e) => {
     console.log("It sent sucessuflly")
     
   })
+
   .catch(err => {"Something error happnes"}); 
  
 
@@ -78,19 +79,19 @@ handleSubmit = (e) => {
       {/* Get data from */}
       <br></br>
       <div className="CONTACT-US" style={{ marginTop: "50px" }}> CONTACT US </div> <br></br>
-
+      
       <form onSubmit = {this.handleSubmit} id = "formID">
       <div className="CONTACT-US">Name </div>
       <br></br>
 
-      <input type='text' placeholder="first" name="name"  onChange={this.handleChange} />
+      <input type='text' placeholder="First and Last" name="name"  onChange={this.handleChange} />
 
       <div className="CONTACT-US"> E-mail </div><br></br>
       <input type='text' placeholder="Email" name="email"   size="80" onChange={this.handleChange} /> 
 
 
       <div className="CONTACT-US"> Comment</div><br></br>
-      <input type='text' placeholder="comment" name="comment"  size="80" style={{ height: "300" }}  onChange={this.handleChange} />
+      <input type='text' placeholder="Comment" name="comment"  size="80" style={{ height: "300" }}  onChange={this.handleChange} />
      
 
        <input type="submit" value ="submit"/>
@@ -123,7 +124,7 @@ handleSubmit = (e) => {
 
       <div className="CONTACT-US"> Join the team</div><br></br>
       <p> Dr. Myoung-Gi Chon <br></br>
-      Tel: 33-844-2721 <br></br>
+      Tel: 334-844-2721 <br></br>
       mzc0113@auburn.edu
       </p>
 
