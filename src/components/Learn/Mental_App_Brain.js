@@ -13,6 +13,7 @@ const Mental_App_Brain = () => {
           alignItems: 'center'
         }}
       />
+      <div></div>
     </div>
   );
 };
