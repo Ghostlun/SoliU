@@ -21,6 +21,9 @@ import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Cent
 import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
 import OtherApp from './components/Learn/Other_App';
+
+//Impot Intro Yoon js file
+import IntroYoon from './components/IntrodoingMember/Intro_yoon'
 //research ->learn
 const App = () => {
   return (
@@ -61,6 +64,10 @@ const App = () => {
           <Route path='/publications' component={PUBLICATIONS} exact />
           <Route path='/contact' component={Contact} exact />
           <Route path='/error404' component={Error404} exact />
+
+
+          <Route path='/research/others/yoon' component={IntroYoon} exact />
+
         </Switch>
       </div>
     </BrowserRouter>
