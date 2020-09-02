@@ -27,6 +27,7 @@ import OtherApp from './components/Learn/Other_App';
 
 //Impot Intro Yoon js file
 import IntroYoon from './components/IntrodoingMember/Intro_yoon'
+import IntroYJ from './components/IntrodoingMember/intro_yj'
 //research ->learn
 const App = () => {
   return (
@@ -70,6 +71,7 @@ const App = () => {
 
 
           <Route path='/research/others/yoon' component={IntroYoon} exact />
+          <Route path='/research/others/yj' component={IntroYJ} exact/>
 
           <Route path='/research/others/dahye' component={IntroDaHye} exact />
 
