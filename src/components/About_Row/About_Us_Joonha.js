@@ -22,7 +22,7 @@ const About_Us_Joonha = () => {
 
         <h6> jzk0121@auburn.edu </h6>
         <h6> 334) 235-5728</h6>
-        <Link to = './' >More Info</Link>
+        <Link to = 'research/others/joonha'>More Info</Link>
       </div>
     </div>
   );
