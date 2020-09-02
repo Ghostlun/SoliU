@@ -22,6 +22,10 @@ import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
 import OtherApp from './components/Learn/Other_App';
 
+
+import Joonha from './components/About_Row/Joonha';
+
+
 //Impot Intro Yoon js file
 import IntroYoon from './components/IntrodoingMember/Intro_yoon'
 //research ->learn
@@ -65,8 +69,10 @@ const App = () => {
           <Route path='/contact' component={Contact} exact />
           <Route path='/error404' component={Error404} exact />
 
+          
+          <Route path='/members/Joonha' component={Joonha} exact />
 
-          <Route path='/research/others/yoon' component={IntroYoon} exact />
+          
 
         </Switch>
       </div>
