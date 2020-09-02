@@ -1,5 +1,7 @@
 import React from 'react';
 import Pic from '../../asset/image/dahae_Kim.png';
+import { Link } from 'react-router-dom';
+
 const About_Us_Dahye = () => {
   return (
     <div>
@@ -20,6 +22,7 @@ const About_Us_Dahye = () => {
 
         <h6> dzk0059@auburn.edu </h6>
         <h6> 580) 458-2199</h6>
+        <Link to='research/others/dahye'>More Info</Link>
       </div>
     </div>
   );
