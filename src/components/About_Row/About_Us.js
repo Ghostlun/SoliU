@@ -43,6 +43,13 @@ const About_Us = () => {
         <div>
           <SixthProfile />
         </div>
+
+      
+        
+
+        
+
+        
       </div>
     </div>
   );
