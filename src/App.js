@@ -33,6 +33,8 @@ import OtherApp from './components/Learn/Other_App';
 import IntroYoon from './components/IntrodoingMember/Intro_yoon'
 import IntroYJ from './components/IntrodoingMember/intro_yj'
 import IntroJoonha from './components/IntrodoingMember/Intro_joonha.js'
+
+
 //research ->learn
 const App = () => {
   return (
