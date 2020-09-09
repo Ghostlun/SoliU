@@ -40,10 +40,7 @@ const First_Main = () => {
         <img src={Split} alt='split' style={{ width: '300px' }} />
       </div>
       <div>
-        Currently, we have focused mental health issues in the time of COVID-19
-        and developed an app (How Are U?) to help students who have anxiety or
-        depression by decreasing stigma and increase accessibility to approach
-        health resources.
+      Recently, because of COVID-19 we have focused our research efforts toward mental health issues and developed the app "How Are U?" to help students with anxiety or depression by decreasing stigma and increasing accessibility for approaching necessary resources.
       </div>
       <div
         style={{

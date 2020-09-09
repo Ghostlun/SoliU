@@ -3,14 +3,15 @@
 
     "id": 1,
     "Name": "ADHD",
-    "info" : "adhd isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
-    
+    "info" : "Attention-deficit / Hyperactivity disorder (ADHD) is a mental disorder having pattern of inattention and/or hyperactive impulsivity. The person with ADHD lacks persistence and focusing. The person with ADHD has such behaviors like excessive talking, hasty actions, desire for immediate actions, inability to delay gratification, and socially intrusive.",
+    "refer" : "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd/index.shtml"
   },
 
   {
     "id": 2,
     "Name": "Dementia",
-    "info" : "Dementia isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
+    "info" : "Dementia is loss of memory, thinking, and reasoning. Dementia leads to lack of language skills, problem solving, self-management, and the ability to focus. Dementia is common to people in older age. Types of dementia includes Alzheimer’s, Lewy body, frontotemporal disorders, and vascular dementia. nia.nih.gov/health/what-dementia-symptoms-types-and-diagnosis",
+    "refer" : "N.A"
 
   },
 
@@ -27,7 +28,7 @@
   {
     "id": 5,
     "Name": "Dysthymia",
-    "info" : "Dysthymia isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
+    "info" : "Dysthymia is known as persistent depression disorder, have many symptoms including depressed mood, low energy, disturbed sleep, and poor concentration. These symptoms lead to more severe conditions such as poor appetite, weight change, hopelessness, excessive guilt, and thoughts of death and suicide"
   }
   ,
   {

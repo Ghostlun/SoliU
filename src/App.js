@@ -22,8 +22,8 @@ import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
 
 import IntroDaHye from './components/IntrodoingMember/Intro_dahye'
-
 import OtherApp from './components/Learn/Other_App';
+import Test from './Pages/Test'
 
 
 
@@ -83,6 +83,8 @@ const App = () => {
           <Route path='/research/others/yj' component={IntroYJ} exact/>
 
           <Route path='/research/others/dahye' component={IntroDaHye} exact />
+
+          <Route path='/test' component={Test} exact />
 
         </Switch>
       </div>

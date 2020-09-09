@@ -4,7 +4,7 @@ const Second_Main = () => {
   return (
     <div>
       <div>
-      SoliU is a research group which is consisted of students from various fields of Auburn University. With Dr. Chon, assistant professor in School of Communication and Journalism, members in this research group aims to identify social problems and find solutions through the knowledge of social science and computer science.
+      SoliU is a research group consisting of students from various fields within Auburn University. With the guidance of Dr. Chon, Assistant Professor in the School of Communication and Journalism, the members of this research group aim to identify social problems and find solutions through the knowledge of social and computer science.
       </div>
       <div
         style={{
@@ -16,7 +16,7 @@ const Second_Main = () => {
         <img src={Brain_Logo} alt='logo' style={{ width: '200px' }} />
       </div>
       <div>
-      Members in SoliU has been developing the mental health App (How Are U?). The App will provide some knowledge explaining the mental disorders, self-depression test, a simple way to provide virtual contact with the experts, and the location information of the centers that might give individuals a help.
+      The members of SoliU developed the mental health app "How Are U?" to provide some information to explain mental disorders. The app also has a self-depression test, easy ways to virtually contact experts, and the location for mental health resources that will help individuals in need. 
       </div>
     </div>
   );

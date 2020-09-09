@@ -49,7 +49,7 @@ export default class Mental_Comp_info extends Component {
             {mentalData.map(c => {
               return (
                 <button
-                  onClick={() => this.button_Clicked(c.id, c.info)}
+                  onClick={() => this.button_Clicked(c.id, c.info, c.refer)}
                   className='Mental_App_button'
                   style={{ width: 500 }}
                 >
@@ -71,10 +71,17 @@ export default class Mental_Comp_info extends Component {
               <h4> Learn about Mental Illness</h4>
 
             {this.displayMenu()}
+     <div>
 
-          <button onClick={() => this.Menu_button_Clicked()}>
+          <button style = {{  display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: '50px',
+        backgroundColor: "#448aca", color:"white",
+        border: "none"  }}onClick={() => this.Menu_button_Clicked()}>
           To the menu
           </button>
+          </div>
           </div>
     );
   }
