@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.7a2b6358.chunk.css",
-    "main.js": "/static/js/main.23fb1de6.chunk.js",
-    "main.js.map": "/static/js/main.23fb1de6.chunk.js.map",
+    "main.css": "/static/css/main.2cf4353a.chunk.css",
+    "main.js": "/static/js/main.964d7532.chunk.js",
+    "main.js.map": "/static/js/main.964d7532.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c9a43d2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.c9a43d2d.js.map",
     "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
-    "static/js/2.b5a7352e.chunk.js": "/static/js/2.b5a7352e.chunk.js",
-    "static/js/2.b5a7352e.chunk.js.map": "/static/js/2.b5a7352e.chunk.js.map",
+    "static/js/2.de53fa8e.chunk.js": "/static/js/2.de53fa8e.chunk.js",
+    "static/js/2.de53fa8e.chunk.js.map": "/static/js/2.de53fa8e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ee4cfeb5ddb59b78490c620dcd5dc61f.js": "/precache-manifest.ee4cfeb5ddb59b78490c620dcd5dc61f.js",
+    "precache-manifest.f1eb161ccf85f0f61c8c7c34aee41629.js": "/precache-manifest.f1eb161ccf85f0f61c8c7c34aee41629.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
-    "static/css/main.7a2b6358.chunk.css.map": "/static/css/main.7a2b6358.chunk.css.map",
-    "static/js/2.b5a7352e.chunk.js.LICENSE.txt": "/static/js/2.b5a7352e.chunk.js.LICENSE.txt",
+    "static/css/main.2cf4353a.chunk.css.map": "/static/css/main.2cf4353a.chunk.css.map",
+    "static/js/2.de53fa8e.chunk.js.LICENSE.txt": "/static/js/2.de53fa8e.chunk.js.LICENSE.txt",
     "static/media/Dr_Chon.png": "/static/media/Dr_Chon.0a7ac967.png",
     "static/media/app_store.png": "/static/media/app_store.832effe0.png",
     "static/media/auburn_logo.png": "/static/media/auburn_logo.be25665b.png",
@@ -21,7 +21,7 @@
     "static/media/brain.png": "/static/media/brain.1f249520.png",
     "static/media/covid19.png": "/static/media/covid19.42ffb3cb.png",
     "static/media/covid_19.png": "/static/media/covid_19.3e512007.png",
-    "static/media/dahae_Kim.png": "/static/media/dahae_Kim.9f664cd0.png",
+    "static/media/dahae_Kim.png": "/static/media/dahae_Kim.c30b36d9.png",
     "static/media/diagram.png": "/static/media/diagram.7290c0eb.png",
     "static/media/google_play_store.png": "/static/media/google_play_store.e0396be0.png",
     "static/media/icon_main.png": "/static/media/icon_main.4b12a38f.png",
@@ -32,7 +32,7 @@
     "static/media/phone_1.png": "/static/media/phone_1.8f8f5d96.png",
     "static/media/phone_2.png": "/static/media/phone_2.3c7a95d3.png",
     "static/media/selftest.png": "/static/media/selftest.10d84b81.png",
-    "static/media/soliU_Team.png": "/static/media/soliU_Team.58d38e9d.png",
+    "static/media/soliU_Team.png": "/static/media/soliU_Team.4161d833.png",
     "static/media/soliU_main_2.png": "/static/media/soliU_main_2.e90c69d6.png",
     "static/media/yeonseo_Ju.png": "/static/media/yeonseo_Ju.429e37e4.png",
     "static/media/yoonha_Kim.png": "/static/media/yoonha_Kim.aadea724.png"
@@ -40,8 +40,8 @@
   "entrypoints": [
     "static/js/runtime-main.c9a43d2d.js",
     "static/css/2.11829350.chunk.css",
-    "static/js/2.b5a7352e.chunk.js",
-    "static/css/main.7a2b6358.chunk.css",
-    "static/js/main.23fb1de6.chunk.js"
+    "static/js/2.de53fa8e.chunk.js",
+    "static/css/main.2cf4353a.chunk.css",
+    "static/js/main.964d7532.chunk.js"
   ]
 }
