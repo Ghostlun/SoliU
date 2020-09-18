@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  BrowserRouter
+  BrowserRouter,
 } from 'react-router-dom';
 
 import Home from './Pages/HomeFirst';
@@ -21,19 +21,15 @@ import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Cent
 import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
 
-import IntroDaHye from './components/IntrodoingMember/Intro_dahye'
+import IntroDaHye from './components/IntrodoingMember/Intro_dahye';
 import OtherApp from './components/Learn/Other_App';
-import Test from './Pages/Test'
-
-
-
-
+import Test from './Pages/Test';
 
 //Impot Intro Yoon js file
-import IntroYoon from './components/IntrodoingMember/Intro_yoon'
-import IntroYJ from './components/IntrodoingMember/intro_yj'
-import IntroJoonha from './components/IntrodoingMember/Intro_joonha.js'
-
+import IntroYoon from './components/IntrodoingMember/Intro_yoon';
+import IntroYJ from './components/IntrodoingMember/intro_yj';
+import IntroJoonha from './components/IntrodoingMember/Intro_joonha.js';
+import IntroJungpyo from './components/IntrodoingMember/Intro_jungpyo.js';
 
 //research ->learn
 const App = () => {
@@ -76,16 +72,18 @@ const App = () => {
           <Route path='/contact' component={Contact} exact />
           <Route path='/error404' component={Error404} exact />
 
-          
           <Route path='/research/others/joonha' component={IntroJoonha} exact />
 
           <Route path='/research/others/yoon' component={IntroYoon} exact />
-          <Route path='/research/others/yj' component={IntroYJ} exact/>
-
+          <Route path='/research/others/yj' component={IntroYJ} exact />
+          <Route
+            path='/research/others/jungpyo'
+            component={IntroJungpyo}
+            exact
+          />
           <Route path='/research/others/dahye' component={IntroDaHye} exact />
 
           <Route path='/test' component={Test} exact />
-
         </Switch>
       </div>
     </BrowserRouter>

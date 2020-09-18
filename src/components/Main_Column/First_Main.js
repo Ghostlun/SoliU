@@ -11,16 +11,15 @@ const First_Main = () => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
-        
       >
         <img
           src={Logo}
           alt='logo'
           style={{
             width: '300px',
-            marginTop: '5em'
+            marginTop: '5em',
           }}
         />
       </div>
@@ -31,7 +30,7 @@ const First_Main = () => {
           justifyContent: 'center',
           alignItems: 'center',
           color: '#21385e',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
         }}
       >
         MENTAL HEALTHCARE APP
@@ -40,14 +39,18 @@ const First_Main = () => {
         <img src={Split} alt='split' style={{ width: '300px' }} />
       </div>
       <div>
-      Recently, because of COVID-19 we have focused our research efforts toward mental health issues and developed the app "How Are U?" to help students with anxiety or depression by decreasing stigma and increasing accessibility for approaching necessary resources.
+        SoliU is a research group consisting of students from various fields
+        within Auburn University. With the guidance of Dr. Chon, Assistant
+        Professor in the School of Communication and Journalism, the members of
+        this research group aim to identify social problems and find solutions
+        through the knowledge of social and computer science.
       </div>
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gridGap: 10,
-          padding: 40
+          padding: 40,
         }}
       >
         <div>
