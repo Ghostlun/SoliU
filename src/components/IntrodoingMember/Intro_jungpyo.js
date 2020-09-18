@@ -5,7 +5,7 @@ const Intro_jungpyo = () => {
   return (
     <div>
       <h4>Hello this is Jungpyo Hong to meet you</h4>
-      <h5>This is test page for our memebrs</h5>
+
       <h5>If you like more information about me, please click to</h5>
       <div>
         <a href='https://www.linkedin.com/in/jungpyo-hong-2987891a1/?locale=en_US'>
