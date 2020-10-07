@@ -5,8 +5,26 @@ import Brain from './Mental_App_Brain';
 import '../../asset/css/style.css';
 
 const Mental_App_Main = () => {
+
+  // Function Add 가능한 부분
+  // 
+  // 
+  // 
+  // 
+
   return (
+
+    // Center 안의 부분은 Mental app 관련 전체부분//
     <center>
+
+
+
+      <div>
+         {/* 사진 디스플레이 되는 부분  */}
+
+
+
+      </div>
       <div className='container_for_Mental_Main'>
         <div>
           <h1
