@@ -64,78 +64,6 @@ table {
 /*    font-size: 14px;*/
 /*}*/
 
-body {
-    font-size: 14px;
-    color: #333;
-    cursor: default;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-body .partner-counseling-container {
-    -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
-            user-select: text
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-div,
-ul,
-ol,
-li,
-input {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box
-}
-
-ul,
-ol,
-li {
-    list-style: none
-}
-
-address,
-em {
-    font-style: normal
-}
-
-a {
-    text-decoration: none;
-    display: block;
-    color: #4c4c4c;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-}
-
-button {
-    background: 0;
-    border: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-}
-
-button:focus,
-textarea:focus {
-    outline: 0;
-}
-
-img {
-    border: 0 none;
-    -webkit-user-drag: none;
-}
 
 input,
 textarea {
@@ -2590,7 +2518,7 @@ html, body {
 
 /**/
 .bg-top {
-    background: #fff8ed;
+    background: #eef9fe;
     padding: 184px 0 60px 0;
 }
 
@@ -2604,7 +2532,7 @@ html, body {
     margin: 24px auto;
     text-align: center;
     font-size: 36px;
-    color: #F57C00;
+    color: #004897;
 }
 
 .bg-top h3 {
@@ -2663,11 +2591,13 @@ html, body {
     margin: 21px auto 0;
     height: 72px;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .program-type-questions-point td {
-    width: 10%;
+    width: 100px;
     height: 100%;
+    table-layout: fixed;
     font-size: 24px;
     border-collapse: collapse;
     border: 1px solid #E0E0E0;

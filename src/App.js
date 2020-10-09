@@ -24,7 +24,7 @@ import MEMBERS from './Pages/Members';
 import IntroDaHye from './components/IntrodoingMember/Intro_dahye';
 import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
-import SelfTest from './Pages/Self_Test'
+import SelfTest from './Pages/Self_Test_page'
 
 //Import Intro Yoon js file
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';

@@ -1,5 +1,6 @@
 import React from 'react';
 import SelfPic from '../../asset/image/selftest.png';
+import { Link } from 'react-router-dom'; 
 import '../../asset/css/style.css';
 const Mental_App_Self_Test_Main = () => {
   return (
@@ -22,7 +23,10 @@ const Mental_App_Self_Test_Main = () => {
         />
         <div>
           <button className='btn_self_test'>
-            <text style={{ color: 'white' }}>TAKE TEST</text>
+          <Link to='/selfTest'>
+          <text style={{ color: 'white' }}>TAKE TEST</text>
+
+          </Link>
           </button>
         </div>
       </div>
