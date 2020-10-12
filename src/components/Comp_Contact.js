@@ -32,12 +32,7 @@ handleChange = (e) => {
 
   let nam =  e.target.name;
   let val = e.target.value;
-  // let pho = e.target.phone;
-
-  this.setState({ [nam] : val})
-  console.log("Check the change for name", this.state.name)
-  console.log("Check the change for email", this.state.email)
-  console.log("Check the change for comment", this.state.comment)
+  console.log (nam, val)
 
 }
 

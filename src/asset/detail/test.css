@@ -24,6 +24,11 @@
     font-display: swap;
 }
 
+.test {
+    position: sticky;
+
+
+}
 body,
 button,
 input,
@@ -2435,16 +2440,6 @@ html, body {
     margin-right: 0;
 }
 
-.snsDiv .snsBtn:before {
-    content: '';
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin: 0 auto 10px auto;
-    background: url(https://d2qrvi4l1nprmf.cloudfront.net/images/service/tests/btn_share.png) no-repeat;
-    background-size: auto 40px;
-}
-
 .snsDiv .sns-facebook:before {
     background-position-x: -40px;
 }
@@ -2703,7 +2698,7 @@ html, body {
     }
 }
 
-.program-psychological-answer-table td.clicked {
+    .program-psychological-answer-table td.clicked {
     background: #F57C00;
     border: 1px solid #F57c00;
     color: #FFF;
@@ -3106,5 +3101,13 @@ html, body {
     }
 }
 
+
+.sticky {
+
+    position: sticky;
+    top: 0;
+    background-color: #1ec800;
+    z-index: 100; /* this is optional and should be different for every project */
+}
 
 /*# sourceMappingURL=program.js.map*/
