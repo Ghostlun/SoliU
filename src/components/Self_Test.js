@@ -20,12 +20,88 @@ export default class Self_test extends Component {
         dataSaved : [0,0,0,0,0,0],
         isReady  : false,
         name : '',
-        warningLevel : 0
+        warningLevel : 0,
+        totalScore : 0
         
     
         
         }
     }
+
+    showTheScore = () => {
+
+    var warning = 0 
+    var score = 0
+
+    score =  this.state.totalScore;
+    console.log ("What is total score", score)
+
+
+    
+    if (score < 40) {
+        warning = 1
+
+    }
+    
+    else if( score < 50) {
+
+        warning = 2
+        
+    }
+
+    else {
+
+        warning = 3
+    }
+
+
+    switch (warning) {
+
+        case 1 :
+            return(
+                <div>
+                Your mental-health is okay
+                <Link to='/research/mental_app'>
+                <div>More Information</div>
+                </Link>
+                </div>
+            )
+        case 2 :
+            return(
+                <div>
+               <b>your mental-health is <div style = {{color :"yellow" , display : "inline"}}>warning</div></b>
+               <br></br>
+
+               <Link to='/research/mental_app'>
+                <div style = {{color : "blue"}}>More Information</div>
+                </Link>
+                </div>
+            )
+
+        case 3:
+            return (
+            <div >
+               <b>your mental-health is  <div style = {{color : "red" , display : "inline"}}> danger</div></b>
+               <br></br>
+                <b> I suggest you contact with counselor</b>
+                <br></br>
+               <Link to='/research/mental_app'>
+                <div style = {{color : "blue"}}>More Information</div>
+                </Link>
+                <br></br>
+                <Link to='/contact'>
+                <div style = {{color : "blue"}}>Contact with counselor</div>
+                </Link>
+
+               
+            </div>
+            )
+    }
+   
+        
+    }
+
+ 
     
     // item is submitted Sucessfully
     item_submitted = () => {
@@ -33,10 +109,12 @@ export default class Self_test extends Component {
         var array = this.state.dataSaved
         var newarray = []
         var i = 0
+        var total = 0
         
         while (i < 6) {
-            var missedNumber = 0
-
+        var missedNumber = 0
+        
+        total = total + array[i]
         if (array[i] == 0) {
 
             missedNumber = i + 1
@@ -47,7 +125,7 @@ export default class Self_test extends Component {
         }   
 
         
-        
+    
 
 
         switch(this.state.warningLevel) {
@@ -60,9 +138,10 @@ export default class Self_test extends Component {
             )
             break;
 
-            case 2: return(
+            case 2: return (
                 <div>
                     <b>Successfully Submit</b>
+                    {this.showTheScore()}
                 </div>
             )
 
@@ -93,8 +172,10 @@ export default class Self_test extends Component {
 displayProgressbar = () => {
        var i = 0
        var value = 0
+       var total = 0
     while (i < 6){
-    
+        
+        total = this.state.dataSaved[i] + total
         if  (this.state.dataSaved[i] != 0) {
 
             value = value + 16
@@ -105,7 +186,8 @@ displayProgressbar = () => {
 
             value = 100
             this.setState({
-                isReady : true
+                isReady : true,
+                totalScore : total
                 
             })
             
@@ -124,6 +206,8 @@ this.setState({
 
         this.setState({name: e.target.value});
       }
+
+   
       
 
     //Submit with value
@@ -136,8 +220,9 @@ handle_submit = (e) => {
     // Once submitted
     if (this.state.isReady == true) {
         let messageREf = fireabse.database().ref(nameData).orderByPriority().limitToLast(100)
-        fireabse.database().ref(nameData).push(target);
-
+         fireabse.database().ref(nameData).push(target);
+        
+        
         // Data resets parts
         this.setState({
            
