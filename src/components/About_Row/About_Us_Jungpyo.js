@@ -17,7 +17,7 @@ const About_Us_Jungpyo = () => {
       <div>
         <h3>Jungpyo Hong</h3>
         <h4>Web/App Developer</h4>
-        <h6>Auburn University 23’ </h6>
+        <h6>Auburn University '23 </h6>
         <h6>Software Engineering major</h6>
 
         <h6> jzh0169@auburn.edu </h6>

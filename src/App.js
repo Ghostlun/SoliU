@@ -24,9 +24,9 @@ import MEMBERS from './Pages/Members';
 import IntroDaHye from './components/IntrodoingMember/Intro_dahye';
 import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
-import SelfTest from './Pages/Self_Test_page'
+import SelfTest from './Pages/Self_Test_page';
 
-//Import Intro Yoon js file
+//Import members profile
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';
 import IntroYJ from './components/IntrodoingMember/intro_yj';
 import IntroJoonha from './components/IntrodoingMember/Intro_joonha.js';
@@ -76,7 +76,9 @@ const App = () => {
           <Route path='/research/others/joonha' component={IntroJoonha} exact />
 
           <Route path='/research/others/yoon' component={IntroYoon} exact />
+          {/* currently she is out 
           <Route path='/research/others/yj' component={IntroYJ} exact />
+          */}
           <Route
             path='/research/others/jungpyo'
             component={IntroJungpyo}
@@ -85,7 +87,7 @@ const App = () => {
           <Route path='/research/others/dahye' component={IntroDaHye} exact />
 
           <Route path='/test' component={Test} exact />
-          <Route path='/selfTest' component = {SelfTest}/>
+          <Route path='/selfTest' component={SelfTest} />
         </Switch>
       </div>
     </BrowserRouter>

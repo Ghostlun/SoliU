@@ -5,6 +5,7 @@ import ThridProfile from './About_Us_Minjoo';
 import FourthProfile from './About_Us_Dahye';
 import FifthhProfile from './About_Us_Yeonseo';
 import SixthProfile from './About_Us_Joonha';
+import SeventhProfile from './About_Us_John_Long';
 const About_Us = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const About_Us = () => {
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridGap: 20,
-          padding: 30
+          padding: 30,
         }}
       >
         <div>
@@ -31,25 +32,18 @@ const About_Us = () => {
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gridGap: 20,
-          padding: 30
+          padding: 30,
         }}
       >
         <div>
           <FourthProfile />
         </div>
         <div>
-          <FifthhProfile />
-        </div>
-        <div>
           <SixthProfile />
         </div>
-
-      
-        
-
-        
-
-        
+        <div>
+          <SeventhProfile />
+        </div>
       </div>
     </div>
   );
