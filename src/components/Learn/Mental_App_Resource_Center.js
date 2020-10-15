@@ -3,7 +3,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import '../../asset/css/style.css';
 const mapStyles = {
   width: '35%',
-  height: '63%'
+  height: '63%',
+  marginLeft: '1%',
 };
 class Mental_App_Resource_Center extends Component {
   render() {
@@ -16,7 +17,7 @@ class Mental_App_Resource_Center extends Component {
             style={mapStyles}
             initialCenter={{
               lat: 32.620892,
-              lng: -85.405405
+              lng: -85.405405,
             }}
           >
             <Marker
@@ -47,5 +48,5 @@ class Mental_App_Resource_Center extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDFneOCvlRsIReloFlD3MnndPnfBQ_dI_8'
+  apiKey: 'AIzaSyDFneOCvlRsIReloFlD3MnndPnfBQ_dI_8',
 })(Mental_App_Resource_Center);
