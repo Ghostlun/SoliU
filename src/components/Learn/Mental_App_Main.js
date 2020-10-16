@@ -1,30 +1,46 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component, Text } from 'react';
 import { Link } from 'react-router-dom';
-import Brain from './Mental_App_Brain';
-
+import BrainImg from '../../asset/image/brain.png';
 import '../../asset/css/style.css';
+import Pic from '../../asset/image/loader.gif';
 
-const Mental_App_Main = () => {
-  // Function Add 가능한 부분
-  //
-  //
-  //
-  //
 
-  return (
-    // Center 안의 부분은 Mental app 관련 전체부분//
-    <center>
-      <div>{/* 사진 디스플레이 되는 부분  */}</div>
-      <div className='container_for_Mental_Main'>
+
+export default class Mental_App_Main extends Component {
+  state = {
+    loading: true
+  }
+
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({
+        loading:false
+      })
+    }, 3000)
+  }
+
+
+  render() {
+    return (
+      <center>
+
+{
+      this.state.loading ? 
+      <div class="loader">
+      <img src={Pic}></img></div> 
+      : 
+      
+
+      <div class='container_for_Mental_Main'>
         <div>
           <h1
             style={{
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
-            How Are U?
+          How Are U?
           </h1>
         </div>
         <div
@@ -32,33 +48,42 @@ const Mental_App_Main = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '50px',
+            marginTop: '50px'
           }}
         >
-          <Brain />
+          <div>
+            <img
+              src={BrainImg}
+              alt='brain'
+              style={{
+              width: '300px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+              }}
+            />
+          </div>
         </div>
-        <div style={{ marginTop: '30px' }}>
+
+        <div className='btn-grid'>
           <button className='btn-mental-main'>
             <Link to='/research/mental_app/information'>
               <text style={{ color: 'white' }}>LEARN</text>
             </Link>
           </button>
-        </div>
-        <div style={{ marginTop: '30px' }}>
+
           <button className='btn-mental-main'>
             <Link to='/research/mental_app/self_test'>
               <text style={{ color: 'white' }}>SELF TEST</text>
             </Link>
           </button>
-        </div>
-        <div style={{ marginTop: '30px' }}>
+
           <button className='btn-mental-main'>
             <Link to='/research/mental_app/chat'>
               <text style={{ color: 'white' }}>CHAT</text>
             </Link>
-          </button>
-        </div>
-        <div style={{ marginTop: '30px' }}>
+          </button> 
+          
           <button className='btn-mental-main'>
             <Link to='/research/mental_app/resource_center'>
               <text style={{ color: 'white' }}>RESOURCE CENTER</text>
@@ -66,8 +91,16 @@ const Mental_App_Main = () => {
           </button>
         </div>
       </div>
+  }
     </center>
-  );
-};
+    
+            
+    
+    )
+  }
+  
+}
 
-export default Mental_App_Main;
+  
+
+// export default Mental_App_Main;
