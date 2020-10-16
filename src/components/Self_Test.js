@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import "../asset/detail/test.css"
 import fireabse from "../firebase"
+import { findRenderedDOMComponentWithTag } from "react-dom/test-utils";
 
 
 export default class Self_test extends Component {
@@ -21,7 +22,9 @@ export default class Self_test extends Component {
         isReady  : false,
         name : '',
         warningLevel : 0,
-        totalScore : 0
+        totalScore : 0,
+        buttonColors : null,
+        someCondition : false
         
         }
     }
@@ -29,7 +32,7 @@ export default class Self_test extends Component {
     // showTheScore = () => {
 
     // var warning = 0 
-    // var score = 0
+    // var score = 0npm
 
     // score =  this.state.totalScore;
     // console.log ("What is total score", score)
@@ -154,19 +157,24 @@ export default class Self_test extends Component {
         
     }
 
-    button_Clicked= (score, array, clicked) => {
+    button_Clicked= (score, array) => {
         
         this.state.selected = 1;
         this.state.dataSaved[array] = score
+        
+        var scoreStr = score.toString();
+        var arrayStr =  array.toString();
+        var correctId = arrayStr+ scoreStr;
 
         this.setState({
 
-            colorChange : "blue"
+            someCondition : correctId
         })
+        console.log(correctId)
         this.displayProgressbar()
-    
-        
+     
     }
+
 
     // Display Progress bar
 displayProgressbar = () => {
@@ -207,7 +215,7 @@ this.setState({
         this.setState({name: e.target.value});
       }
 
-   
+      
       
 
     //Submit with value
@@ -246,7 +254,15 @@ handle_submit = (e) => {
     }
 
     
+    caculateId = (array, number) => {
 
+        var eachID = ""
+        eachID = array + number
+
+        return eachID
+        
+
+    }
     
     // Display quesiton parts
     displayQuestion = (quesitons, array) => {
@@ -257,9 +273,9 @@ handle_submit = (e) => {
             <div>
 
 
-            <div class="program-type-questions-point">
+            <div className="program-type-questions-point">
             <h4>{quesitons}</h4>
-            <table class="program-psychological-answer-table">
+            <table className="program-psychological-answer-table">
                 <tbody>
                     <tr>
                  <div>
@@ -271,17 +287,15 @@ handle_submit = (e) => {
               );
             })}  */}
 
-            <td onClick = {()=> this.button_Clicked(1,array)}>1</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>2</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>3</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>4</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>5</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>6</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>6</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>7</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>8</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>9</td>
-            <td onClick = {()=> this.button_Clicked(1,array)}>10</td>
+            <td  onClick = {()=> this.button_Clicked(1,array)}  style={ this.state.someCondition === this.caculateId(array,"1") ? { backgroundColor : "blue"} : {}}>1</td>
+            <td  onClick = {()=> this.button_Clicked(2,array)}  style={ this.state.someCondition === this.caculateId(array,"2") ? { backgroundColor : "blue"} : {}}>2</td>
+ç            <td onClick = {()=> this.button_Clicked(4,array)}   style={ this.state.someCondition === 4 ? { backgroundColor : "blue"} : {}}>4</td>
+            <td onClick = {()=> this.button_Clicked(5,array)}   style={ this.state.someCondition === 5 ? { backgroundColor : "blue"} : {}}>5</td>
+            <td onClick = {()=> this.button_Clicked(6,array)}   style={ this.state.someCondition === 6 ? { backgroundColor : "blue"} : {}}>6</td>
+            <td onClick = {()=> this.button_Clicked(7,array)}   style={ this.state.someCondition === 7 ? { backgroundColor : "blue"} : {}}>7</td>
+            <td onClick = {()=> this.button_Clicked(8,array)}   style={ this.state.someCondition === 8 ? { backgroundColor : "blue"} : {}}>8</td>
+            <td onClick = {()=> this.button_Clicked(9,array)}   style={ this.state.someCondition === 9 ? { backgroundColor : "blue"} : {}}>9</td>
+            <td onClick = {()=> this.button_Clicked(10,array)}  style={ this.state.someCondition === 10 ? { backgroundColor : "blue"} : {}}>10</td>
 
             </div>
             </tr>
