@@ -23,83 +23,81 @@ export default class Self_test extends Component {
         warningLevel : 0,
         totalScore : 0
         
-    
-        
         }
     }
 
-    showTheScore = () => {
+    // showTheScore = () => {
 
-    var warning = 0 
-    var score = 0
+    // var warning = 0 
+    // var score = 0
 
-    score =  this.state.totalScore;
-    console.log ("What is total score", score)
+    // score =  this.state.totalScore;
+    // console.log ("What is total score", score)
 
 
     
-    if (score < 40) {
-        warning = 1
+    // if (score < 40) {
+    //     warning = 1
 
-    }
+    // }
     
-    else if( score < 50) {
+    // else if( score < 50) {
 
-        warning = 2
+    //     warning = 2
         
-    }
+    // }
 
-    else {
+    // else {
 
-        warning = 3
-    }
+    //     warning = 3
+    // }
 
 
-    switch (warning) {
+    // switch (warning) {
 
-        case 1 :
-            return(
-                <div>
-                Your mental-health is okay
-                <Link to='/research/mental_app'>
-                <div>More Information</div>
-                </Link>
-                </div>
-            )
-        case 2 :
-            return(
-                <div>
-               <b>your mental-health is <div style = {{color :"yellow" , display : "inline"}}>warning</div></b>
-               <br></br>
+    //     case 1 :
+    //         return(
+    //             <div>
+    //             Your mental-health is okay
+    //             <Link to='/research/mental_app'>
+    //             <div>More Information</div>
+    //             </Link>
+    //             </div>
+    //         )
+    //     case 2 :
+    //         return(
+    //             <div>
+    //            <b>your mental-health is <div style = {{color :"yellow" , display : "inline"}}>warning</div></b>
+    //            <br></br>
 
-               <Link to='/research/mental_app'>
-                <div style = {{color : "blue"}}>More Information</div>
-                </Link>
-                </div>
-            )
+    //            <Link to='/research/mental_app'>
+    //             <div style = {{color : "blue"}}>More Information</div>
+    //             </Link>
+    //             </div>
+    //         )
 
-        case 3:
-            return (
-            <div >
-               <b>your mental-health is  <div style = {{color : "red" , display : "inline"}}> danger</div></b>
-               <br></br>
-                <b> I suggest you contact with counselor</b>
-                <br></br>
-               <Link to='/research/mental_app'>
-                <div style = {{color : "blue"}}>More Information</div>
-                </Link>
-                <br></br>
-                <Link to='/contact'>
-                <div style = {{color : "blue"}}>Contact with counselor</div>
-                </Link>
+    //     case 3:
+    //         return (
+    //         <div >
+    //            <b>your mental-health is  <div style = {{color : "red" , display : "inline"}}> danger</div></b>
+    //            <br></br>
+    //             <b> I suggest you contact with counselor</b>
+    //             <br></br>
+    //            <Link to='/research/mental_app'>
+    //             <div style = {{color : "blue"}}>More Information</div>
+    //             </Link>
+    //             <br></br>
+    //             <Link to='/contact'>
+    //             <div style = {{color : "blue"}}>Contact with counselor</div>
+    //             </Link>
 
                
-            </div>
-            )
-    }
+    //         </div>
+    //         )
+    // }
    
         
-    }
+    // }
 
  
     
@@ -141,7 +139,6 @@ export default class Self_test extends Component {
             case 2: return (
                 <div>
                     <b>Successfully Submit</b>
-                    {this.showTheScore()}
                 </div>
             )
 
@@ -157,12 +154,15 @@ export default class Self_test extends Component {
         
     }
 
-    button_Clicked= (score, array) => {
+    button_Clicked= (score, array, clicked) => {
         
         this.state.selected = 1;
         this.state.dataSaved[array] = score
 
+        this.setState({
 
+            colorChange : "blue"
+        })
         this.displayProgressbar()
     
         
@@ -264,12 +264,25 @@ handle_submit = (e) => {
                     <tr>
                  <div>
     
-            {this.state.numbers.map(numberslist => {
+            {/* {this.state.numbers.map(numberslist => {
               return (
                     <td  onClick={() => this.button_Clicked(numberslist, array)}>{numberslist}</td>  
 
               );
-            })} 
+            })}  */}
+
+            <td onClick = {()=> this.button_Clicked(1,array)}>1</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>2</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>3</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>4</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>5</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>6</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>6</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>7</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>8</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>9</td>
+            <td onClick = {()=> this.button_Clicked(1,array)}>10</td>
+
             </div>
             </tr>
             </tbody>

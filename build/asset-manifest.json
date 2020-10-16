@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.2cf4353a.chunk.css",
-    "main.js": "/static/js/main.964d7532.chunk.js",
-    "main.js.map": "/static/js/main.964d7532.chunk.js.map",
+    "main.css": "/static/css/main.f77c2e05.chunk.css",
+    "main.js": "/static/js/main.0796a530.chunk.js",
+    "main.js.map": "/static/js/main.0796a530.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c9a43d2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.c9a43d2d.js.map",
-    "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
-    "static/js/2.de53fa8e.chunk.js": "/static/js/2.de53fa8e.chunk.js",
-    "static/js/2.de53fa8e.chunk.js.map": "/static/js/2.de53fa8e.chunk.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.7f1998ce.chunk.js": "/static/js/2.7f1998ce.chunk.js",
+    "static/js/2.7f1998ce.chunk.js.map": "/static/js/2.7f1998ce.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f1eb161ccf85f0f61c8c7c34aee41629.js": "/precache-manifest.f1eb161ccf85f0f61c8c7c34aee41629.js",
+    "precache-manifest.8fa0f1e6991bbeeb69568f21c94a78ce.js": "/precache-manifest.8fa0f1e6991bbeeb69568f21c94a78ce.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
-    "static/css/main.2cf4353a.chunk.css.map": "/static/css/main.2cf4353a.chunk.css.map",
-    "static/js/2.de53fa8e.chunk.js.LICENSE.txt": "/static/js/2.de53fa8e.chunk.js.LICENSE.txt",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.f77c2e05.chunk.css.map": "/static/css/main.f77c2e05.chunk.css.map",
+    "static/js/2.7f1998ce.chunk.js.LICENSE.txt": "/static/js/2.7f1998ce.chunk.js.LICENSE.txt",
     "static/media/Dr_Chon.png": "/static/media/Dr_Chon.0a7ac967.png",
+    "static/media/John_Long.png": "/static/media/John_Long.5c8e9b40.png",
     "static/media/app_store.png": "/static/media/app_store.832effe0.png",
     "static/media/auburn_logo.png": "/static/media/auburn_logo.be25665b.png",
     "static/media/auburn_logo_2.png": "/static/media/auburn_logo_2.65ab15fc.png",
@@ -39,9 +40,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c9a43d2d.js",
-    "static/css/2.11829350.chunk.css",
-    "static/js/2.de53fa8e.chunk.js",
-    "static/css/main.2cf4353a.chunk.css",
-    "static/js/main.964d7532.chunk.js"
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.7f1998ce.chunk.js",
+    "static/css/main.f77c2e05.chunk.css",
+    "static/js/main.0796a530.chunk.js"
   ]
 }
