@@ -20,6 +20,8 @@ import MentalAppSelfTestMain from './components/Learn/Mental_App_Self_Test_Main'
 import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Center';
 import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
+import LoadingScreen from './components/Learn/Mental_App_LoadingScreen';
+import MainOptionScreen from './components/Learn/Mental_App_MainOptionScreen';
 
 import IntroDaHye from './components/IntrodoingMember/Intro_dahye';
 import OtherApp from './components/Learn/Other_App';
