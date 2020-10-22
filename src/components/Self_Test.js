@@ -28,80 +28,6 @@ export default class Self_test extends Component {
         
         }
     }
-
-    // showTheScore = () => {
-
-    // var warning = 0 
-    // var score = 0npm
-
-    // score =  this.state.totalScore;
-    // console.log ("What is total score", score)
-
-
-    
-    // if (score < 40) {
-    //     warning = 1
-
-    // }
-    
-    // else if( score < 50) {
-
-    //     warning = 2
-        
-    // }
-
-    // else {
-
-    //     warning = 3
-    // }
-
-
-    // switch (warning) {
-
-    //     case 1 :
-    //         return(
-    //             <div>
-    //             Your mental-health is okay
-    //             <Link to='/research/mental_app'>
-    //             <div>More Information</div>
-    //             </Link>
-    //             </div>
-    //         )
-    //     case 2 :
-    //         return(
-    //             <div>
-    //            <b>your mental-health is <div style = {{color :"yellow" , display : "inline"}}>warning</div></b>
-    //            <br></br>
-
-    //            <Link to='/research/mental_app'>
-    //             <div style = {{color : "blue"}}>More Information</div>
-    //             </Link>
-    //             </div>
-    //         )
-
-    //     case 3:
-    //         return (
-    //         <div >
-    //            <b>your mental-health is  <div style = {{color : "red" , display : "inline"}}> danger</div></b>
-    //            <br></br>
-    //             <b> I suggest you contact with counselor</b>
-    //             <br></br>
-    //            <Link to='/research/mental_app'>
-    //             <div style = {{color : "blue"}}>More Information</div>
-    //             </Link>
-    //             <br></br>
-    //             <Link to='/contact'>
-    //             <div style = {{color : "blue"}}>Contact with counselor</div>
-    //             </Link>
-
-               
-    //         </div>
-    //         )
-    // }
-   
-        
-    // }
-
  
     
     // item is submitted Sucessfully
@@ -157,13 +83,13 @@ export default class Self_test extends Component {
         
     }
 
-    button_Clicked= (score, array) => {
-        
+    button_Clicked= (Question_Number, answer) => {
+        // Question_Number / score
         this.state.selected = 1;
-        this.state.dataSaved[array] = score
+        this.state.dataSaved[Question_Number] = answer
         
-        var scoreStr = score.toString();
-        var arrayStr =  array.toString();
+        var scoreStr = answer.toString();
+        var arrayStr =  Question_Number.toString();
         var correctId = arrayStr+ scoreStr;
 
         this.setState({
@@ -254,18 +180,21 @@ handle_submit = (e) => {
     }
 
     
-    caculateId = (array, number) => {
+    caculateId = (array, number, stay) => {
 
         var eachID = ""
         eachID = array + number
+        
+        console.log (eachID);
 
+        
         return eachID
         
 
     }
     
     // Display quesiton parts
-    displayQuestion = (quesitons, array) => {
+    displayQuestion = (quesitons_text, Question_Number) => {
 
 
         return (
@@ -274,29 +203,16 @@ handle_submit = (e) => {
 
 
             <div className="program-type-questions-point">
-            <h4>{quesitons}</h4>
+            <h4>{quesitons_text}</h4>
             <table className="program-psychological-answer-table">
                 <tbody>
                     <tr>
                  <div>
-    
-            {/* {this.state.numbers.map(numberslist => {
-              return (
-                    <td  onClick={() => this.button_Clicked(numberslist, array)}>{numberslist}</td>  
-
-              );
-            })}  */}
-
-            <td  onClick = {()=> this.button_Clicked(1,array)}  style={ this.state.someCondition === this.caculateId(array,"1") ? { backgroundColor : "blue"} : {}}>1</td>
-            <td  onClick = {()=> this.button_Clicked(2,array)}  style={ this.state.someCondition === this.caculateId(array,"2") ? { backgroundColor : "blue"} : {}}>2</td>
-ç            <td onClick = {()=> this.button_Clicked(4,array)}   style={ this.state.someCondition === 4 ? { backgroundColor : "blue"} : {}}>4</td>
-            <td onClick = {()=> this.button_Clicked(5,array)}   style={ this.state.someCondition === 5 ? { backgroundColor : "blue"} : {}}>5</td>
-            <td onClick = {()=> this.button_Clicked(6,array)}   style={ this.state.someCondition === 6 ? { backgroundColor : "blue"} : {}}>6</td>
-            <td onClick = {()=> this.button_Clicked(7,array)}   style={ this.state.someCondition === 7 ? { backgroundColor : "blue"} : {}}>7</td>
-            <td onClick = {()=> this.button_Clicked(8,array)}   style={ this.state.someCondition === 8 ? { backgroundColor : "blue"} : {}}>8</td>
-            <td onClick = {()=> this.button_Clicked(9,array)}   style={ this.state.someCondition === 9 ? { backgroundColor : "blue"} : {}}>9</td>
-            <td onClick = {()=> this.button_Clicked(10,array)}  style={ this.state.someCondition === 10 ? { backgroundColor : "blue"} : {}}>10</td>
-
+                {/* If Button is clicked */}
+            <td  onClick = {()=> this.button_Clicked(Question_Number,1)}  style={ this.state.someCondition === this.caculateId(Question_Number,"1") ? { backgroundColor : "blue"} : {}}>1</td>
+            <td  onClick = {()=> this.button_Clicked(Question_Number,2)}  style={ this.state.someCondition === this.caculateId(Question_Number,"2") ? { backgroundColor : "blue"} : {}}>2</td>
+            <td  onClick = {()=> this.button_Clicked(Question_Number,3)}  style={ this.state.someCondition === this.caculateId(Question_Number,"3") ? { backgroundColor : "blue"} : {}}>3</td>
+         
             </div>
             </tr>
             </tbody>
@@ -331,13 +247,13 @@ handle_submit = (e) => {
         return (
     <div>
         <center>
-    <div class="bg page-program-type-questions">
+        <div class="bg page-program-type-questions">
         <div class="bg-top">
             <h1>Self-Test</h1>
             <h2>STEP. Evaluate my mental-health</h2>
             <h3>How was your state of mind during the week? Please rate my mental state.</h3>
         </div>
-    </div>
+        </div>
             
     <div class="page" id="program-type-questions">
      
@@ -349,11 +265,26 @@ handle_submit = (e) => {
 
         </div>
             {this.displayQuestion( "Q1. How much is the depression in my daily life", 0)}
+
+
+
+
+
+
+
+
+            
             {this.displayQuestion( "Q2. How much anxiety is in my daily life?" , 1)}
-            {this.displayQuestion( "Q3. How much is the psychological trauma in my daily life?", 2)}
+       
+       
+       
+       
+       
+       
+            {/* {this.displayQuestion( "Q3. How much is the psychological trauma in my daily life?", 2)}
             {this.displayQuestion( "Q4. How negative is my mindset?",3)}
             {this.displayQuestion( "Q5. How far is my self-esteem?",4)}
-            {this.displayQuestion( "Q6. If there are any problems with my interpersonal relationships, how much?",5)}
+            {this.displayQuestion( "Q6. If there are any problems with my interpersonal relationships, how much?",5)} */}
     
 
            
