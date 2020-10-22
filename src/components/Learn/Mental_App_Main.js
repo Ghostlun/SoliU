@@ -7,8 +7,11 @@ import Pic from '../../asset/image/loader.gif';
 
 
 export default class Mental_App_Main extends Component {
+
+
   state = {
     loading: true
+
   }
 
   componentDidMount = () => {
@@ -16,7 +19,9 @@ export default class Mental_App_Main extends Component {
       this.setState({
         loading:false
       })
-    }, 3000)
+    }, 1500)
+
+
   }
 
 
@@ -27,12 +32,11 @@ export default class Mental_App_Main extends Component {
 {
       this.state.loading ? 
       <div class="loader">
-      <img src={Pic}></img></div> 
-      : 
+      <img src={Pic}></img></div>  : 
       
 
       <div class='container_for_Mental_Main'>
-        <div>
+         <div>
           <h1
             style={{
               display: 'flex',
@@ -89,7 +93,7 @@ export default class Mental_App_Main extends Component {
               <text style={{ color: 'white' }}>RESOURCE CENTER</text>
             </Link>
           </button>
-        </div>
+        </div> 
       </div>
   }
     </center>
