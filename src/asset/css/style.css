@@ -32,6 +32,10 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.container_for_start_button {
+  border-radius: 20px;
+  margin-top: '30px';
+}
 .table_style {
   border-collapse: collapse;
   border-spacing: 0;
