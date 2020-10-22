@@ -5,24 +5,24 @@ import MainOptionScreen from './../Learn/Mental_App_MainOptionScreen';
 
 class Mental_App_Main extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      loading: true
-    }
- }
+
+
+
+  state = {
+    loading: true
+  }
 
   componentDidMount = () => {
     setTimeout(() => {
-     this.setState({
-       loading:false
-     })
+      this.setState({
+        loading:false
+      })
     }, 1500)
   }
 
   render() {
     return (
-      
+    {
       this.state.loading ? 
 
         <center>
@@ -30,15 +30,13 @@ class Mental_App_Main extends Component {
            <LoadingScreen></LoadingScreen> 
          </div>
         </center>
-
        :
-
         <center>
          <div class='container_for_Mental_Main'>
           <MainOptionScreen></MainOptionScreen> 
         </div>
         </center>
+    }
     ) 
-  } 
-} 
-export default Mental_App_Main;
+  }
+}
