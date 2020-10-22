@@ -22,7 +22,7 @@ class Mental_App_Main extends Component {
 
   render() {
     return (
-    {
+    
       this.state.loading ? 
 
         <center>
@@ -36,7 +36,8 @@ class Mental_App_Main extends Component {
           <MainOptionScreen></MainOptionScreen> 
         </div>
         </center>
-    }
+    
     ) 
   }
 }
+export default Mental_App_Main
