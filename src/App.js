@@ -27,6 +27,7 @@ import IntroDaHye from './components/IntrodoingMember/Intro_dahye';
 import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
 import SelfTest from './Pages/Self_Test_page';
+import TestingPage from './Pages/TestingJoonha';
 
 //Import members profile
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';
@@ -90,6 +91,8 @@ const App = () => {
 
           <Route path='/test' component={Test} exact />
           <Route path='/selfTest' component={SelfTest} />
+
+          <Route path='/testingjoonha' component={TestingPage} />
         </Switch>
       </div>
     </BrowserRouter>
