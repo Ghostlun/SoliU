@@ -3,6 +3,7 @@ import BrainImg from '../../asset/image/brain.png';
 import { Link } from 'react-router-dom';
 
 const MainOptionScreen = () => {
+<<<<<<< Updated upstream
   return (
     <Fragment>
       <center>
@@ -17,6 +18,22 @@ const MainOptionScreen = () => {
             How Are U?
           </h1>
         </div>
+=======
+    return(
+        <Fragment>
+          
+          <div class='container_for_Mental_Main'>
+          <center>
+            <div>
+              <h1 style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+                }}>
+              How Are U?
+              </h1>
+            </div>
+>>>>>>> Stashed changes
 
         <div>
           <img
@@ -61,6 +78,7 @@ const MainOptionScreen = () => {
           </button>
         </div>
       </center>
+      </div>
     </Fragment>
   );
 };

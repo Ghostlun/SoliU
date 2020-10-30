@@ -1,16 +1,17 @@
-import React, { Fragment, Component, Text } from 'react';
+import React, { Component } from 'react';
 import '../../asset/css/style.css';
 import LoadingScreen from './../Learn/Mental_App_LoadingScreen';
 import MainOptionScreen from './../Learn/Mental_App_MainOptionScreen';
+import Cookies from "js-cookie"
 
 class Mental_App_Main extends Component {
-
-
-
-
-  state = {
-    loading: true
+  constructor(props) {
+    super(props)
+    this.state = { 
+    }
   }
+
+  state = { loading: true }
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -18,6 +19,9 @@ class Mental_App_Main extends Component {
         loading:false
       })
     }, 1500)
+
+    Cookies.set("Page", "1", { expires: 1 })
+    
   }
 
   render() {
