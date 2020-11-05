@@ -3,7 +3,6 @@ import BrainImg from '../../asset/image/brain.png';
 import { Link } from 'react-router-dom';
 
 const MainOptionScreen = () => {
-<<<<<<< Updated upstream
   return (
     <Fragment>
       <center>
@@ -18,22 +17,6 @@ const MainOptionScreen = () => {
             How Are U?
           </h1>
         </div>
-=======
-    return(
-        <Fragment>
-          
-          <div class='container_for_Mental_Main'>
-          <center>
-            <div>
-              <h1 style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-                }}>
-              How Are U?
-              </h1>
-            </div>
->>>>>>> Stashed changes
 
         <div>
           <img
@@ -50,35 +33,34 @@ const MainOptionScreen = () => {
         </div>
 
         <div style={{ marginTop: '30px' }}>
-          <button className='btn-mental-main'>
-            <Link to='/research/mental_app/information'>
+          <Link to='/research/mental_app/information'>
+            <button className='btn-mental-main'>
               <text style={{ color: 'white' }}>LEARN</text>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div style={{ marginTop: '30px' }}>
-          <button className='btn-mental-main'>
-            <Link to='/research/mental_app/self_test'>
+          <Link to='/research/mental_app/self_test'>
+            <button className='btn-mental-main'>
               <text style={{ color: 'white' }}>SELF TEST</text>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div style={{ marginTop: '30px' }}>
-          <button className='btn-mental-main'>
-            <Link to='/research/mental_app/chat'>
+          <Link to='/research/mental_app/chat'>
+            <button className='btn-mental-main'>
               <text style={{ color: 'white' }}>CHAT</text>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div style={{ marginTop: '30px' }}>
-          <button className='btn-mental-main'>
-            <Link to='/research/mental_app/resource_center'>
+          <Link to='/research/mental_app/resource_center'>
+            <button className='btn-mental-main'>
               <text style={{ color: 'white' }}>RESOURCE CENTER</text>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </center>
-      </div>
     </Fragment>
   );
 };

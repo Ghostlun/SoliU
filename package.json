@@ -12,6 +12,7 @@
     "firebase-tools": "^8.7.0",
     "google-map-react": "^2.1.8",
     "google-maps-react": "^2.0.6",
+    "js-cookie": "^2.2.1",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
