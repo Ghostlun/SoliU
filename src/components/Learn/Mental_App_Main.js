@@ -8,10 +8,10 @@ class Mental_App_Main extends Component {
   constructor(props) {
     super(props)
     this.state = { 
+      loading : true
     }
   }
 
-  state = { loading: true }
 
   componentDidMount = () => {
     setTimeout(() => {
@@ -20,7 +20,6 @@ class Mental_App_Main extends Component {
       })
     }, 1500)
 
-    Cookies.set("Page", "1", { expires: 1 })
     
   }
 

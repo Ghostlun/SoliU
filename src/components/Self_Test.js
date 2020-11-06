@@ -231,6 +231,10 @@ export default class Self_test extends Component {
               <tr>
                 <div>
                   {/* If Button is clicked */}
+                  <td style = {{border : 0}}></td>
+                  <td style = {{border : 0}}></td>
+                  <td style = {{border : 0}}></td>
+
                   <td
                     onClick={() => this.button_Clicked(Question_Number, 1)}
                     style={
@@ -278,8 +282,13 @@ export default class Self_test extends Component {
                   >
                     5
                   </td>
+
+                  <td style = {{border : 0}}></td>
+                  <td style = {{border : 0}}></td>
+                  <td style = {{border : 0}}></td>
                 </div>
               </tr>
+              
             </tbody>
           </table>
           <div className='question-point-guide'>

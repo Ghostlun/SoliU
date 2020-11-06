@@ -8,7 +8,7 @@ const LoadingScreen = () => {
         <img
           src={Pic}
           style={{
-            width: '300px',
+            width: '80%',
             display: 'center',
             justifyContent: 'center',
             alignItems: 'center',
