@@ -1,11 +1,11 @@
 import React from 'react';
-import Brain from '../../asset/image/brain.png';
+import Main_image from '../../asset/image/main_pic.png';
 const Mental_App_Brain = () => {
   return (
     <div>
       <img
-        src={Brain}
-        alt='brain'
+        src={Main_image}
+        alt='Main_image'
         style={{
           width: '300px',
           display: 'flex',

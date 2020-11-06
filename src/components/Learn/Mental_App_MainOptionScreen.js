@@ -1,17 +1,26 @@
 import React, { Fragment } from 'react';
-import BrainImg from '../../asset/image/brain.png';
+import BrainImg from '../../asset/image/main_pic.png';
 import { Link } from 'react-router-dom';
+import Loading from '../../components/Learn/Mental_App_LoadingScreen'
 
 const MainOptionScreen = () => {
+
+
+
+
   return (
+
     <Fragment>
       <center>
         <div>
+          <br></br>
+          <br></br>
           <h1
             style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              marginTop : '50'
             }}
           >
             How Are U?
@@ -23,7 +32,7 @@ const MainOptionScreen = () => {
             src={BrainImg}
             alt='brain'
             style={{
-              width: '300px',
+              width: '500px',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
