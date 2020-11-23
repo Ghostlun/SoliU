@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import BrainImg from '../../asset/image/main_pic.png';
+import BrainImg from '../../asset/image/main2n.png';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/Learn/Mental_App_LoadingScreen'
 

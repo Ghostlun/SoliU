@@ -2670,7 +2670,7 @@ html, body {
 
 .program-psychological-answer-table {
     width: 408px;
-    margin: 21px auto 0;
+    /* margin: 21px auto 0; */
     height: 72px;
     border-collapse: separate;
 }

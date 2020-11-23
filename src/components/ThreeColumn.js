@@ -10,7 +10,7 @@ const ThreeColumn = () => {
           color: '#3975ab',
           marginTop: '2em'
         }}
-      >np
+      >
         <center>
           <h1>"We address, communicate and solve social issues"</h1>
         </center>

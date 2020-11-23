@@ -1,0 +1,123 @@
+[
+
+    {
+
+        "id" : 1,
+        "type" : "Depression",
+        "question" : "I felt downhearted and blue."
+
+    },
+
+    {
+
+        "id" : 2,
+        "type" : "Depression",
+        "question" : "I felt that I had nothing to look forward to."
+
+    },
+
+    {
+
+        "id" : 3,
+        "type" : "Depression",
+        "question" : "I felt that life was meaningless."
+
+    },
+    {
+
+        "id" : 4,
+        "type" : "Depression",
+        "question" : "I felt I wasn’t worth much as a person."
+
+    },
+
+    {
+
+        "id" : 5,
+        "type" : "Depression",
+        "question" : "I was unable to become enthusiastic about anything."
+
+    },
+    {
+
+        "id" : 6,
+        "type" : "Anxiety",
+        "question" : "I was aware of dryness of my mouth."
+
+    },
+    {
+
+        "id" : 7,
+        "type" : "Anxiety",
+        "question" : "I experienced trembling (e.g., in the hands)."
+
+    },
+
+    {
+
+        "id" : 8,
+        "type" : "Anxiety",
+        "question" : "I was worried about situations in which I might panic and make a fool of myself."
+
+    },
+
+    {
+
+        "id" : 9,
+        "type" : "Anxiety",
+        "question" : "I felt I was close to panic."
+
+    },
+
+    {
+
+        "id" : 10,
+        "type" : "Anxiety",
+        "question" : "I felt scared without any good reason."
+
+    },
+
+    {
+
+        "id" : 11,
+        "type" : "Anxiety",
+        "question" : "I found it hard to wind down."
+
+    },
+
+    {
+
+        "id" : 12,
+        "type" : "Anxiety",
+        "question" : "I felt that I was using a lot of nervous energy."
+
+    },
+    {
+
+        "id" : 13,
+        "type" : "Anxiety",
+        "question" : "I found myself getting agitated."
+
+    },
+    {
+
+        "id" : 14,
+        "type" : "Anxiety",
+        "question" : "I tended to over-react to situations."
+
+    },
+
+    {
+
+        "id" : 15,
+        "type" : "Depression",
+        "question" : "I was intolerant of anything that kept me from getting on with what I was doing."
+
+    }
+    
+
+
+
+
+
+]
