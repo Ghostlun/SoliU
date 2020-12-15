@@ -62,6 +62,12 @@ export default class Self_test extends Component {
     //Converting data
     var target = e.toString();
     var nameData = this.state.name;
+    
+    if (nameData.includes("#,&,@")){
+
+      this.state.isReady = false;
+
+    }
 
     // Once submitted
     if (this.state.isReady == true) {
@@ -101,7 +107,7 @@ export default class Self_test extends Component {
     var i = 0;
     var total = 0;
 
-    while (i < 6) {
+    while (i < 15) {
       var missedNumber = 0;
 
       total = total + array[i];
@@ -125,7 +131,11 @@ export default class Self_test extends Component {
       case 2:
         return (
           <div>
-            <b>Successfully Submit</b>
+
+
+          <div>   <b>Successfully Submit</b></div>
+       <button >    <Link to = {"/research/mental_app/self_test/result"} >Show the result</Link>
+       </button>
           </div>
         );
 
@@ -180,7 +190,7 @@ export default class Self_test extends Component {
 
     // Value code =  Question Number + score number
     var valueCode = arrayStr + scoreStr
-    console.log("ValueCode", valueCode)
+    // console.log("ValueCode", valueCode)
 
     
     var copied_array = this.state.savedValue

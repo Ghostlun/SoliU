@@ -28,6 +28,7 @@ import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
 import SelfTest from './Pages/Self_Test_page';
 import TestingPage from './Pages/TestingJoonha';
+import Result from './Pages/Result'
 
 //Import members profile
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';
@@ -93,6 +94,8 @@ const App = () => {
           <Route path='/selfTest' component={SelfTest} />
 
           <Route path='/testingjoonha' component={TestingPage} />
+
+          <Route path = '/research/mental_app/self_test/result'  component = {Result}/>
         </Switch>
       </div>
     </BrowserRouter>
