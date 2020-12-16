@@ -80,7 +80,7 @@
     {
 
         "id" : 11,
-        "type" : "Anxiety",
+        "type" : "Stress",
         "question" : "I found it hard to wind down."
 
     },
@@ -88,21 +88,21 @@
     {
 
         "id" : 12,
-        "type" : "Anxiety",
+        "type" : "Stress",
         "question" : "I felt that I was using a lot of nervous energy."
 
     },
     {
 
         "id" : 13,
-        "type" : "Anxiety",
+        "type" : "Stress",
         "question" : "I found myself getting agitated."
 
     },
     {
 
         "id" : 14,
-        "type" : "Anxiety",
+        "type" : "Stress",
         "question" : "I tended to over-react to situations."
 
     },
@@ -110,7 +110,7 @@
     {
 
         "id" : 15,
-        "type" : "Depression",
+        "type" : "Stress",
         "question" : "I was intolerant of anything that kept me from getting on with what I was doing."
 
     }

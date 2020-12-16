@@ -1,36 +1,81 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Footer from '../components/Footer';
 import Test from '../components/Self_Test'
 import { BarChart, Bar, XAxis, YAxis } from 'recharts';
+import Cookies, { get } from "js-cookie"
 
 
-const data = [{name: 'Anixiety', uv: 400, pv: 2400, amt: 2400}
-                ];
+// uv 는 결과값
+// Each type shows each numbers
+const data = [
+    {name: "Depression", score : 8,   average : 12},
+    {name : "Anxiety", score:7 , average : 13},
+    {name : "Stress", score :12 , average : 13}
+
+];
+
+// const data = [
+//     {name: "Depression", uv: 5 , pv : 3},
+//     {name : "Anxiety", uv:2, pv : 3},
+//     {name : "Stress", uv :3 , pv :3 }
+                
+//         ];
+        
+
+const colors = ["#DB4455", '#3354DB', '#55DB44']
+
+export default class Result extends Component{
+
+    constructor(props){
+        super(props)
 
 
 
-
-const Result = () => {
-
+    }
 
 
+    // changeColor = (dataName) => {
+
+    //     if (dataName === "D_id")
+
+    //         return "#DB4455"
+
+    //     else if (dataName === "A_id") {
 
 
-    return <div>
+    //         return "#3354DB"
+    //     }
 
-        this page is result page
+    //     else if (dataName === "S_id") {
+    //         return "#55DB44"
+    //     }
+    // }
 
+render () {
 
-        <BarChart width={600} height={300} data={data}>
-    <XAxis dataKey="name"  />
-    <YAxis />
-    <Bar dataKey="uv" fill="#8884d8"
-    />
-  </BarChart>
+ return (
+    <div>
+        <center>
+        Here is your Results
+
+        <BarChart width={900} height={450} data={data}
+        margin = {{top :5, right : 30, left: 20, bottom :5}}
+        >
+        <XAxis dataKey = "name"  />
+        <YAxis />
+        <Bar dataKey="score" fill = "#55DB44" barSize = {50}>
+      
+        
+        
+        </Bar>
+       
+        </BarChart> 
+        
+        
         <Footer/>
-
+        </center>
 
     </div>
+    )
 }
-
-export default Result
+}

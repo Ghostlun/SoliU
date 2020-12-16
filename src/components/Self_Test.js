@@ -5,6 +5,7 @@ import '../asset/detail/test.css';
 import fireabse from '../firebase';
 import { findRenderedDOMComponentWithTag } from 'react-dom/test-utils';
 import questionJson from "../question.json";
+import Cookies, { get } from "js-cookie"
 
 
 export default class Self_test extends Component {
@@ -20,6 +21,7 @@ export default class Self_test extends Component {
       totalScore: 0,
       buttonColors: null,
       savedValue : []
+      
     };
   }
 
@@ -29,8 +31,7 @@ export default class Self_test extends Component {
     var i = 0;
     var value = 7;
     var total = 0;
-
-    
+ 
     while (i < 15) {
       // total = this.state.dataSaved[i] + total;
       
@@ -69,27 +70,27 @@ export default class Self_test extends Component {
 
     }
 
-    // Once submitted
-    if (this.state.isReady == true) {
-      let messageREf = fireabse
-        .database()
-        .ref(nameData)
-        .orderByPriority()
-        .limitToLast(100);
-      fireabse.database().ref(nameData).push(target);
+    // // Once submitted
+    // if (this.state.isReady == true) {
+    //   let messageREf = fireabse
+    //     .database()
+    //     .ref(nameData)
+    //     .orderByPriority()
+    //     .limitToLast(100);
+    //   fireabse.database().ref(nameData).push(target);
 
-      // Data resets parts
-      this.setState({
-        name: '',
-        dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        isReady: 'false',
-        warningLevel: 2,
-      });
-    } else {
-      this.setState({
-        warningLevel: 1,
-      });
-    }
+    //   // Data resets parts
+    //   this.setState({
+    //     name: '',
+    //     dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     isReady: 'false',
+    //     warningLevel: 2,
+    //   });
+    // } else {
+    //   this.setState({
+    //     warningLevel: 1,
+    //   });
+    // }
   };
 
   caculateId = (array, number, stay) => {
@@ -119,6 +120,8 @@ export default class Self_test extends Component {
       i = i + 1;
     }
 
+    this.state.warningLevel = 2;
+
     switch (this.state.warningLevel) {
       case 1:
         return (
@@ -130,13 +133,8 @@ export default class Self_test extends Component {
 
       case 2:
         return (
-          <div>
-
-
-          <div>   <b>Successfully Submit</b></div>
-       <button >    <Link to = {"/research/mental_app/self_test/result"} >Show the result</Link>
-       </button>
-          </div>
+          
+          this.move_result_to_result_page()
         );
 
       default:
@@ -144,6 +142,19 @@ export default class Self_test extends Component {
     }
   };
 
+  move_result_to_result_page = () => {
+
+    // Name : setName, value
+    Cookies.set("user", "Yoonhakim");
+    Cookies.set("value", [2,3,4,2,1,3,4,5,4,2,4,5,2,2,2] )
+    console.log ( " Daved data" , [2,3,4,2,1,3,4,5,4,2,4,5,2,2,2]);
+
+    return(
+    <button>  
+    <Link to = {"/research/mental_app/self_test/result" } >Show the result</Link>
+    </button>
+    )
+  }
   button_Clicked = (Question_Number, answer) => {
     // Question_Number / score
     this.state.dataSaved[Question_Number] = answer;
