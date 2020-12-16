@@ -70,27 +70,27 @@ export default class Self_test extends Component {
 
     }
 
-    // // Once submitted
-    // if (this.state.isReady == true) {
-    //   let messageREf = fireabse
-    //     .database()
-    //     .ref(nameData)
-    //     .orderByPriority()
-    //     .limitToLast(100);
-    //   fireabse.database().ref(nameData).push(target);
+    // Once submitted
+    if (this.state.isReady == true) {
+      let messageREf = fireabse
+        .database()
+        .ref(nameData)
+        .orderByPriority()
+        .limitToLast(100);
+      fireabse.database().ref(nameData).push(target);
 
-    //   // Data resets parts
-    //   this.setState({
-    //     name: '',
-    //     dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    //     isReady: 'false',
-    //     warningLevel: 2,
-    //   });
-    // } else {
-    //   this.setState({
-    //     warningLevel: 1,
-    //   });
-    // }
+      // Data resets parts
+      this.setState({
+        name: '',
+        dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        isReady: 'false',
+        warningLevel: 2,
+      });
+    } else {
+      this.setState({
+        warningLevel: 1,
+      });
+    }
   };
 
   caculateId = (array, number, stay) => {
@@ -146,8 +146,7 @@ export default class Self_test extends Component {
 
     // Name : setName, value
     Cookies.set("user", "Yoonhakim");
-    Cookies.set("value", [2,3,4,2,1,3,4,5,4,2,4,5,2,2,2] )
-    console.log ( " Daved data" , [2,3,4,2,1,3,4,5,4,2,4,5,2,2,2]);
+    Cookies.set("result", this.state.dataSaved);
 
     return(
     <button>  
@@ -311,7 +310,6 @@ export default class Self_test extends Component {
 
             <table className='program-psychological-answer-table'>
              <tbody>             <tr>
-                <div>
                 {/* If Button is clicked */}
                   <td style = {{border : 0}}></td>
                   <td style = {{border : 0}}></td>
@@ -368,7 +366,6 @@ export default class Self_test extends Component {
                    <td style = {{border : 0}}></td>
                    <td style = {{border : 0}}></td>
                    <td style = {{border : 0}}></td>
-                 </div>
                </tr>
               
              </tbody>
