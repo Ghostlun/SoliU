@@ -5,76 +5,85 @@ import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 import Cookies, { get } from "js-cookie"
 
 
+// // Object
+// const stduent = {
+//     name : 'Anna',
+//     level: 1
+// }
+
+// const {name, level} = stduent
 
 
-const showScore = (value) => {
 
-   var dataSaved = Cookies.get("result")
-// Object로 변환 완료
-   let obj = JSON.parse(dataSaved)
+const DataClass = () => {
 
-   var depressionScore = 0 
-   var anxietyScore = 0
-   var stressScore = 0
-   
-   var i = 0
-   while (i < 15) {
 
-        if (i <5) {
+    const calculateResult = (id) => {
 
-            depressionScore = depressionScore + obj[i]
+        var resultScore = 0
+        // var dataSets = Cookies.get("result")
+        var dataSets = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        if (id === 1){
+    
+            var i = 0 
+            while (i < 5) {
+    
+                resultScore = dataSets[i] + resultScore
+                
+            }
+            console.log("Depression score",  resultScore)
+            return resultScore
+        }
+        else if (id === 2) {
+    
+            var i = 5 
+            while (i < 10) {
+                resultScore = dataSets[i] + resultScore
+            }
+            console.log("Anxiety score",  resultScore)
+            
+            return resultScore
+        }
+    
+        else {
+            
+            var i = 10
+            while (i < 10) {
+                resultScore = dataSets[i] + resultScore
+            }
+            console.log("Stress score",  resultScore)
+            
+            return resultScore
+    
         }
         
-        if (i <10) {
-
-            anxietyScore = anxietyScore + obj[i]
-        }
-
-        if (i <15) {
-
-            stressScore = stressScore + obj[i]
-        }
     
-    i = i + 1;
-   }
-   console.log()
-   console.log(depressionScore);
-   console.log(anxietyScore);
-    if (value === 1)
-
-        
-        return depressionScore
-
-    else if (value === 2)
-
-        return anxietyScore
-    
-    else if (value === 3)
-
-        return stressScore
+    }
 
     
+    const data = [
+        {name: 'Depression', result: calculateResult(1), average: 13.7 },
+        {name: 'Anxiety', result: calculateResult(2), average: 14 },
+        {name: 'Stress', result: calculateResult(3), average: 12},
+    
+    ]
+
+    return data
 }
 
 
+// Data format
 
 
-// uv 는 결과값
-// Each type shows each numbers
-const data = [
-    {name: "Depression", score : showScore(1),   average : 12},
-    {name : "Anxiety", score: showScore(2) , average : 13},
-    {name : "Stress", score : showScore(3), average : 13}
 
-];
-
+// // Data format
 // const data = [
-//     {name: "Depression", uv: 5 , pv : 3},
-//     {name : "Anxiety", uv:2, pv : 3},
-//     {name : "Stress", uv :3 , pv :3 }
-                
-//         ];
-        
+//     {name: 'Depression', result: 1, average: 13.7 },
+//     {name: 'Anxiety', result: 2, average: 14 },
+//     {name: 'Stress', result: 3, average: 12},
+
+// ];
+
 
 const colors = ["#DB4455", '#3354DB', '#55DB44']
 
@@ -83,28 +92,73 @@ export default class Result extends Component{
     constructor(props){
         super(props)
 
-        
+        this.state = {
+           
+            type :[
+                {name: 'Depression', result: this.calculateResult(1), average: 13.7 },
+                {name: 'Anxiety', result: this.calculateResult(2), average: 14 },
+                {name: 'Stress', result: this.calculateResult(3), average: 12},
+            
+            ]
+         }
 
 
     }
 
+    calculateResult = (id) => {
 
-    // changeColor = (dataName) => {
+        var resultScore = 0
+        var value = Cookies.get("result")
+        console.log(value)
+        // 데이터 변환
+        let dataSets = JSON.parse(value)
+    
+        console.log("dataSets", dataSets) 
+        if (id === 1){
+    
+            var i = 0 
+            while (i < 5) {
+    
+                resultScore = dataSets[i] + resultScore
+                i = i + 1
+            }
+            console.log("Depression score",  resultScore)
+            return resultScore
+        }
+        else if (id === 2) {
+    
+            var i = 5 
+            while (i < 10) {
+                resultScore = dataSets[i] + resultScore
+                i = i + 1
+            }
+            console.log("Anxiety score",  resultScore)
+            
+            return resultScore
+        }
+    
+        else {
+            
+            var i = 10
+            while (i < 15) {
+                resultScore = dataSets[i] + resultScore
+                i = i +1
+            }
+            console.log("Stress score",  resultScore)
+            
+            return resultScore
+    
+        }
+    }
+        
+    
 
-    //     if (dataName === "D_id")
-
-    //         return "#DB4455"
-
-    //     else if (dataName === "A_id") {
+componentDidMount () {
 
 
-    //         return "#3354DB"
-    //     }
+    
+}
 
-    //     else if (dataName === "S_id") {
-    //         return "#55DB44"
-    //     }
-    // }
 
 render () {
 
@@ -113,14 +167,16 @@ render () {
         <center>
         Here is your Results
 
-        <BarChart width={900} height={450} data={data}
+        <BarChart width={900} height={450} data={this.state.type}
         margin = {{top :5, right : 30, left: 20, bottom :5}}
         >
         <XAxis dataKey = "name"  />
         <YAxis />
-        <Bar dataKey="score" fill = "#55DB44" barSize = {50}>
-      
-        
+
+        <Bar dataKey="result" fill = "#55DB44" barSize = {50}>
+        </Bar>
+
+        <Bar dataKey = "average" fill = "#3354DB" barSize = {50}>
         
         </Bar>
        

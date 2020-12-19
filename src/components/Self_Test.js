@@ -106,32 +106,32 @@ export default class Self_test extends Component {
     var array = this.state.dataSaved;
     var newarray = [];
     var i = 0;
-    var total = 0;
+    var isMissedNumber = 0;    
 
     while (i < 15) {
       var missedNumber = 0;
-
-      total = total + array[i];
+      // total = total + array[i];
       if (array[i] === 0) {
         missedNumber = i + 1;
         newarray.push(missedNumber);
+        isMissedNumber = 1;    
+
       }
 
       i = i + 1;
     }
 
-    this.state.warningLevel = 2;
 
-    switch (this.state.warningLevel) {
-      case 1:
+    switch (isMissedNumber) {
+      case 0:
         return (
           <div>
-            <b>You missed question {newarray}</b>
+            <b>You missed some question {newarray}</b>
           </div>
         );
         break;
 
-      case 2:
+      case 1:
         return (
           
           this.move_result_to_result_page()
@@ -168,8 +168,8 @@ export default class Self_test extends Component {
 
     
     this.saveValue(arrayStr, scoreStr);
-    
     this.displayProgressbar();
+
   };
 
 
@@ -197,12 +197,7 @@ export default class Self_test extends Component {
   
     var arrayStr = Question_Number.toString();
     var scoreStr = answer.toString();
-
-    // Value code =  Question Number + score number
-    var valueCode = arrayStr + scoreStr
-    // console.log("ValueCode", valueCode)
-
-    
+    var valueCode = arrayStr + scoreStr 
     var copied_array = this.state.savedValue
     // What value includes
     var data
@@ -215,10 +210,7 @@ export default class Self_test extends Component {
     if (copied_array.length > 0) {
     // State saved value 계속 바뀝니다
       for (var i = 0; i < this.state.savedValue.length; i++) {
-                  
-        
-
-
+            
     }
 
 
@@ -226,75 +218,11 @@ export default class Self_test extends Component {
 
   else {this.state.savedValue.push(valueCode)}
 
-
-    
-
   //endline
-
   console.log("Copied_array", copied_array)
 
 }
    
-  
-
-
-
-
-
-
-
-
-
-
-    // // State saved value 계속 바뀝니다
-    // for (var i = 0; i < 16; i++) {
-      
-      
-    //   console.log("valueCode:", valueCode);
-
-    //   if (valueCode.length == 2){
-    //   data = this.state.savedValue[i];
-  
-    //   console.log("Data", data)
-    //   first_letter =  data.charAt(0);
-    //   console.log("This value Code is 2")
-    //   console.log("first_letter 3", first_letter)
-    //   }
-    //   if (valueCode.length == 3){
-    //     data = this.state.savedValue[i];
-
-    //     first_letter = data.toString().subString(0,1)
-    //     console.log("This value Code is 3")
-
-    //     console.log("first_letter 4" , first_letter)
-    //   }
-      
-      
-    //   // 만약에 같은 문제의 데이터가 존재한다면
-    //   if (first_letter == arrayStr) {
-      
-    
-    //   // Replace
-    //    this.state.savedValue[i] = (valueCode);
-
-    //   }
-      
-
-    //   else {
-    //     this.state.savedValue.push(valueCode);
-
-
-    //   }
-    // }
-  // }
-
-  // else {
-  //   this.state.savedValue.push(valueCode);  
-  // }
-
-    
-  
-
  // Display quesiton parts
   displayQuestion = () => {
     
@@ -596,17 +524,7 @@ export default class Self_test extends Component {
             </div>
           </div>
           {this.displayQuestion()}
-          {/* {this.displayQuestion(
-            'Q1. How much is the depression in my daily life',
-            0
-          )} */}
-
-            {/* {this.displayQuestion('Q2. How much anxiety is in my daily life?', 1)}
-            {this.displayQuestion( "Q3. How much is the psychological trauma in my daily life?", 2)}
-            {this.displayQuestion( "Q4. How negative is my mindset?",3)}
-            {this.displayQuestion( "Q5. How far is my self-esteem?",4)}
-            {this.displayQuestion( "Q6. If there are any problems with my interpersonal relationships, how much?",5)} */}
-
+         
           <br></br>
           <input
             type='text'
