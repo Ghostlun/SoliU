@@ -28,7 +28,7 @@ import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
 import SelfTest from './Pages/Self_Test_page';
 import TestingPage from './Pages/TestingJoonha';
-import Result from './Pages/Result'
+import TestResult from './Pages/Result'
 
 //Import members profile
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';
@@ -95,11 +95,11 @@ const App = () => {
 
           <Route path='/testingjoonha' component={TestingPage} />
 
-          <Route path = '/research/mental_app/self_test/result'  component = {Result}/>
+          <Route path = '/result'  component = {TestResult}  />
         </Switch>
       </div>
     </BrowserRouter>
-  );
+  ); 
 };
 
 export default App;

@@ -6,22 +6,23 @@ import fireabse from '../firebase';
 import { findRenderedDOMComponentWithTag } from 'react-dom/test-utils';
 import questionJson from "../question.json";
 import Cookies, { get } from "js-cookie"
+import Result from '../Pages/Result'
 
-
+// data = datasaved [userinput]
 export default class Self_test extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       textInfo: null,
       progress: 0,
-      dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       isReady: false,
       name: '',
-      warningLevel: 0,
       totalScore: 0,
       buttonColors: null,
-      savedValue : []
-      
+      savedValue : [],
+      submitted : 'false'
     };
   }
 
@@ -55,108 +56,153 @@ export default class Self_test extends Component {
   };
 
   handleChange = (e) => {
+
     this.setState({ name: e.target.value });
+    
   };
 
-  //Submit with value
-  handle_submit = (e) => {
-    //Converting data
-    var target = e.toString();
-    var nameData = this.state.name;
+  //submit button works
+  handle_submit = (dataSaved) => {
     
-    if (nameData.includes("#,&,@")){
+    //Converting data
+    var data = dataSaved.toString();
+    var nameData = this.state.name;
+    var dataReady = 1
 
-      this.state.isReady = false;
+    var d = new Date()
+    var date = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear()
+    
+    var time = month + "/" + date + "/" + year
 
+    console.log (time)
+
+
+    if (nameData.includes("#,&,@") || nameData == ""){
+      dataReady = 0;
+      alert("Your names contains #,&,@")
     }
 
-    // Once submitted
-    if (this.state.isReady == true) {
+
+    console.log("What is target", data)
+    console.log("what is data", date)
+
+    // Data send to firebase
+    if (dataReady== 1) {
       let messageREf = fireabse
         .database()
         .ref(nameData)
         .orderByPriority()
         .limitToLast(100);
-      fireabse.database().ref(nameData).push(target);
 
-      // Data resets parts
+      fireabse.database().ref(nameData).push({send_data : data, send_time : time });
+    }
+
+    // Name : setName, value
+    Cookies.set("user", nameData);
+    Cookies.set("result", this.state.dataSaved)
+
+
+
+    // Data Resets
       this.setState({
-        name: '',
         dataSaved: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         isReady: 'false',
-        warningLevel: 2,
-      });
-    } else {
-      this.setState({
-        warningLevel: 1,
-      });
-    }
+        submitted : 'true'
+    });
+
+    // console.log ("Window href", window.location.hostname)
+    // var currentPage = window.location.hostname + "/result"
+    // console.log("Current Page", currentPage)
+    
+    // window.location.assign(currentPage)
+
   };
 
   caculateId = (array, number, stay) => {
     var eachID = '';
     eachID = array + number;
-
-
     return eachID;
   };
 
   // item is submitted Sucessfully
   item_submitted = () => {
     var array = this.state.dataSaved;
-    var newarray = [];
-    var i = 0;
-    var isMissedNumber = 0;    
-
-    while (i < 15) {
-      var missedNumber = 0;
-      // total = total + array[i];
-      if (array[i] === 0) {
-        missedNumber = i + 1;
-        newarray.push(missedNumber);
-        isMissedNumber = 1;    
-
+    var missedNumberList = ""
+    var WarningLevel = 0;    
+  
+    // when datasets has missed number, show us.
+    for (var i = 0; i< array.length; i++) {
+    if (array[i] === 0) {
+        var value = i + 1;
+        missedNumberList += value + ",";
+        WarningLevel = 0;
       }
-
-      i = i + 1;
+      else {
+        WarningLevel = 1
+      }
     }
 
+    if (this.state.submitted == 'true') {
 
-    switch (isMissedNumber) {
+      WarningLevel = 2
+    }
+
+    // Warning level = 0 , there is some missed value
+    switch (WarningLevel) {
       case 0:
         return (
           <div>
-            <b>You missed some question {newarray}</b>
+            <b>You missed some question {missedNumberList}</b>
           </div>
         );
         break;
+        
+        case 1:
+          return (
+            <div>
+              <b>Please type your type your Auburn Id in the chat box, and click the submit button</b>
+            </div>
 
-      case 1:
-        return (
-          
-          this.move_result_to_result_page()
-        );
+          )
+        case 2:
+          return (
+
+            <div>
+            <b>your result is submitted</b>
+            
+              <div>
+             <Link to = "/result">
+              <button>Show the results</button>
+            </Link> 
+            </div>
+
+            </div>
+
+          );
+          break;
 
       default:
         return <div></div>;
     }
+
+
+
   };
 
-  move_result_to_result_page = () => {
+  move_page_to = () => {
 
-    // Name : setName, value
-    Cookies.set("user", "Yoonhakim");
-    Cookies.set("result", this.state.dataSaved);
-
-    return(
-    <button>  
-    <Link to = {"/research/mental_app/self_test/result" } >Show the result</Link>
-    </button>
-    )
+    
+  //   <Link to = "/result">
+  //   <button>Show the results</button>
+  // </Link>
   }
+
   button_Clicked = (Question_Number, answer) => {
     // Question_Number / score
-    this.state.dataSaved[Question_Number] = answer;
+    var location = Question_Number - 1
+    this.state.dataSaved[location] = answer;
 
     var scoreStr = answer.toString();
     var arrayStr = Question_Number.toString();
@@ -165,36 +211,32 @@ export default class Self_test extends Component {
     this.setState({
       someCondition: correctId,
     });
-
     
     this.saveValue(arrayStr, scoreStr);
     this.displayProgressbar();
 
+    
   };
 
 
+  // check answer is on the lists or nots;
   isAnswerExists = (question, answer) => {
 
     var arrayStr = question;
     var scoreStr = answer.toString();
-
     var value = arrayStr + scoreStr;
-
     var array_lists = this.state.savedValue
 
     if (array_lists.includes(value)){
-
-      return true
+        return true
     }
-
-    return false
+      return false
     
   }
   
   // Save value into 
   saveValue = (Question_Number, answer) => {
     
-  
     var arrayStr = Question_Number.toString();
     var scoreStr = answer.toString();
     var valueCode = arrayStr + scoreStr 
@@ -210,17 +252,11 @@ export default class Self_test extends Component {
     if (copied_array.length > 0) {
     // State saved value 계속 바뀝니다
       for (var i = 0; i < this.state.savedValue.length; i++) {
-            
-    }
-
-
+      }
   }
-
   else {this.state.savedValue.push(valueCode)}
-
   //endline
   console.log("Copied_array", copied_array)
-
 }
    
  // Display quesiton parts
@@ -322,6 +358,8 @@ export default class Self_test extends Component {
     </div>
     )
   }
+
+  
     
 
 
@@ -499,6 +537,7 @@ export default class Self_test extends Component {
 
 
   render() {
+
     return (
       <div>
         <center>
@@ -534,7 +573,7 @@ export default class Self_test extends Component {
             onChange={this.handleChange}
           />
           <button onClick={() => this.handle_submit(this.state.dataSaved)}>
-            submit
+            Submit
           </button>
 
           {this.item_submitted()}
