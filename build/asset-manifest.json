@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.0e8a51d2.chunk.css",
-    "main.js": "/static/js/main.0938738c.chunk.js",
-    "main.js.map": "/static/js/main.0938738c.chunk.js.map",
+    "main.js": "/static/js/main.7a516d07.chunk.js",
+    "main.js.map": "/static/js/main.7a516d07.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c9a43d2d.js",
     "runtime-main.js.map": "/static/js/runtime-main.c9a43d2d.js.map",
     "static/css/2.2a86faee.chunk.css": "/static/css/2.2a86faee.chunk.css",
-    "static/js/2.2417be8f.chunk.js": "/static/js/2.2417be8f.chunk.js",
-    "static/js/2.2417be8f.chunk.js.map": "/static/js/2.2417be8f.chunk.js.map",
+    "static/js/2.aa1d71c9.chunk.js": "/static/js/2.aa1d71c9.chunk.js",
+    "static/js/2.aa1d71c9.chunk.js.map": "/static/js/2.aa1d71c9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e9f96373ae688690dc04e9c67e3e761a.js": "/precache-manifest.e9f96373ae688690dc04e9c67e3e761a.js",
+    "precache-manifest.a8dd9eeb5427e30ecefce9c90d0fa25a.js": "/precache-manifest.a8dd9eeb5427e30ecefce9c90d0fa25a.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/static/css/2.2a86faee.chunk.css.map",
     "static/css/main.0e8a51d2.chunk.css.map": "/static/css/main.0e8a51d2.chunk.css.map",
-    "static/js/2.2417be8f.chunk.js.LICENSE.txt": "/static/js/2.2417be8f.chunk.js.LICENSE.txt",
+    "static/js/2.aa1d71c9.chunk.js.LICENSE.txt": "/static/js/2.aa1d71c9.chunk.js.LICENSE.txt",
     "static/media/Dr_Chon.png": "/static/media/Dr_Chon.0a7ac967.png",
     "static/media/John_Long.png": "/static/media/John_Long.85842b32.png",
     "static/media/app_store.png": "/static/media/app_store.832effe0.png",
@@ -42,8 +42,8 @@
   "entrypoints": [
     "static/js/runtime-main.c9a43d2d.js",
     "static/css/2.2a86faee.chunk.css",
-    "static/js/2.2417be8f.chunk.js",
+    "static/js/2.aa1d71c9.chunk.js",
     "static/css/main.0e8a51d2.chunk.css",
-    "static/js/main.0938738c.chunk.js"
+    "static/js/main.7a516d07.chunk.js"
   ]
 }
