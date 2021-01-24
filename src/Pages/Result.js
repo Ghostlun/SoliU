@@ -4,18 +4,16 @@ import Test from '../components/Self_Test'
 import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 import Cookies, { get } from "js-cookie"
 import Self_test from '../components/Self_Test';
+import Fireabse from '../firebase'
+import axios from 'axios'
 
 
-// // Object
-// const stduent = {
-//     name : 'Anna',
-//     level: 1
-// }
 
-// const {name, level} = stduent
 
 
 const colors = ["#DB4455", '#3354DB', '#55DB44']
+
+
 
 export default class Result extends Component{
 
@@ -24,10 +22,11 @@ export default class Result extends Component{
 
         this.state = {
             userName : this.calculateResult(0),
+            persons : [],
             type :[
-                {name: 'Depression', result: this.calculateResult(1), average: 13.7 },
-                {name: 'Anxiety', result: this.calculateResult(2), average: 14 },
-                {name: 'Stress', result: this.calculateResult(3), average: 12},
+                {name: 'Depression', result: this.calculateResult(1), average: this.getAverage() },
+                {name: 'Anxiety', result: this.calculateResult(2), average: this.getAverage() },
+                {name: 'Stress', result: this.calculateResult(3), average: this.getAverage() },
             
             ]
          }
@@ -35,19 +34,23 @@ export default class Result extends Component{
 
     }
 
-    componentDidUpdate() {
+    getAverage = () => {
 
-        this.getName();
-
+        axios.get(`https://soliu-69a78.firebaseio.com/yzk0062/`)
+        .then(res => {
+          const persons = res.send_data;
+          this.setState({ persons });
+        })
+        console.log("Game")
 
     }
-    
+
+   
 
     calculateResult = (id) => {
 
         var resultScore = 0
         var value = Cookies.get("result")
-        console.log(value)
         // 데이터 변환
         let dataSets = JSON.parse(value)
 

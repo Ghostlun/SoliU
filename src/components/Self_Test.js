@@ -76,7 +76,6 @@ export default class Self_test extends Component {
     
     var time = month + "/" + date + "/" + year
 
-    console.log (time)
 
 
     if (nameData.includes("#,&,@") || nameData == ""){
@@ -85,8 +84,7 @@ export default class Self_test extends Component {
     }
 
 
-    console.log("What is target", data)
-    console.log("what is data", date)
+   
 
     // Data send to firebase
     if (dataReady== 1) {
@@ -120,11 +118,7 @@ export default class Self_test extends Component {
 
   };
 
-  caculateId = (array, number, stay) => {
-    var eachID = '';
-    eachID = array + number;
-    return eachID;
-  };
+
 
   // item is submitted Sucessfully
   item_submitted = () => {
@@ -191,13 +185,6 @@ export default class Self_test extends Component {
 
   };
 
-  move_page_to = () => {
-
-    
-  //   <Link to = "/result">
-  //   <button>Show the results</button>
-  // </Link>
-  }
 
   button_Clicked = (Question_Number, answer) => {
     // Question_Number / score
@@ -227,6 +214,7 @@ export default class Self_test extends Component {
     var value = arrayStr + scoreStr;
     var array_lists = this.state.savedValue
 
+
     if (array_lists.includes(value)){
         return true
     }
@@ -235,28 +223,66 @@ export default class Self_test extends Component {
   }
   
   // Save value into 
-  saveValue = (Question_Number, answer) => {
+  saveValue = (InputQuestion, InputAnswer) => {
     
-    var arrayStr = Question_Number.toString();
-    var scoreStr = answer.toString();
-    var valueCode = arrayStr + scoreStr 
+    var arrayStr = InputQuestion.toString();
+    var scoreStr = InputAnswer.toString();
+    var valueCode = arrayStr + scoreStr
+    // Array copied
     var copied_array = this.state.savedValue
-    // What value includes
-    var data
-    var first_letter
-    var InputRequried = true;
-    // 지금 로직은 savedValue는 버튼을 눌렀을때, 그거에대한 valuecode를 가지고 있는거야, valucode부분에 Question_number와 일치하는 부분 부분이 있으면, 
-    // 그것을 바꿔준다, 그렇지 않다면 push를 해준다.
-    this.state.savedValue.push(valueCode)
 
-    if (copied_array.length > 0) {
-    // State saved value 계속 바뀝니다
-      for (var i = 0; i < this.state.savedValue.length; i++) {
+    var QuestionInArray, AnswerInArray, ValueCodeInArray
+  
+
+
+    if (copied_array != 0) {
+      copied_array.push(valueCode)
+
+      for (var i = 0; i < copied_array.length; i++) {
+
+        ValueCodeInArray = copied_array[i] 
+        if (ValueCodeInArray.length == 2) {
+
+          QuestionInArray = ValueCodeInArray[0]
+          AnswerInArray = ValueCodeInArray[1]
+        }
+
+        else if (ValueCodeInArray.length ==3) {
+
+          QuestionInArray = ValueCodeInArray[0,1]
+          AnswerInArray = ValueCodeInArray[2]
+        }
+
+
+
+        // 숫자가 존재할때
+
+       if (QuestionInArray == InputQuestion) {
+
+            copied_array[i] = valueCode
+        }
+        
+
       }
-  }
-  else {this.state.savedValue.push(valueCode)}
-  //endline
-  console.log("Copied_array", copied_array)
+
+    }
+    
+    else {
+
+      copied_array.push(valueCode)
+    }
+    
+
+  
+   
+    
+  
+  //EndLine, and confirmed it
+    this.setState({
+
+    savedValue : copied_array
+
+  })
 }
    
  // Display quesiton parts
@@ -275,9 +301,9 @@ export default class Self_test extends Component {
             <table className='program-psychological-answer-table'>
              <tbody>             <tr>
                 {/* If Button is clicked */}
-                  <td style = {{border : 0}}></td>
-                  <td style = {{border : 0}}></td>
-                  <td style = {{border : 0}}></td>
+                  <td style = {{border : 0 , backgroundColor :"white"}}></td>
+                  <td style = {{border : 0, backgroundColor :"white"}}></td>
+                  <td style = {{border : 0, backgroundColor :"white"}}></td>
 
                   <td
                      onClick={() => this.button_Clicked(data.id, 1)}
@@ -327,9 +353,9 @@ export default class Self_test extends Component {
                      5
                  </td>
 
-                   <td style = {{border : 0}}></td>
-                   <td style = {{border : 0}}></td>
-                   <td style = {{border : 0}}></td>
+                   <td style = {{border : 0, backgroundColor :"white"}}></td>
+                   <td style = {{border : 0, backgroundColor :"white"}}></td>
+                   <td style = {{border : 0,backgroundColor :"white"}}></td>
                </tr>
               
              </tbody>
@@ -358,182 +384,6 @@ export default class Self_test extends Component {
     </div>
     )
   }
-
-  
-    
-
-
-  
-        // // {/* <div className='program-type-questions-point'>
-        //   <h4>{quesitons_text}</h4>
-        //   <table className='program-psychological-answer-table'>
-        //     <tbody>
-        //       <tr>
-        //         <div>
-        //           {/* If Button is clicked 
-        //           <td style = {{border : 0}}></td>
-        //           <td style = {{border : 0}}></td>
-        //           <td style = {{border : 0}}></td>
-
-        //           <td
-        //             onClick={() => this.button_Clicked(Question_Number, 1)}
-        //             style={
-        //               this.isAnswerExists(Question_Number,1) ? { backgroundColor: 'blue' }: {} }
-        //           >
-        //             1
-        //           </td>
-        //           <td
-        //             onClick={() => this.button_Clicked(Question_Number, 2)}
-        //             style={
-        //               this.isAnswerExists(Question_Number,2)
-        //                 ? { backgroundColor: 'blue' }
-        //                 : {}
-        //             }
-        //           >
-        //             2
-        //           </td>
-        //           <td
-        //             onClick={() => this.button_Clicked(Question_Number, 3)}
-        //             style={
-        //               this.isAnswerExists(Question_Number,3)
-        //                 ? { backgroundColor: 'blue' }
-        //                 : {}
-        //             }
-        //           >
-        //             3
-        //           </td>
-        //           <td
-        //             onClick={() => this.button_Clicked(Question_Number, 4)}
-        //             style={
-        //               this.isAnswerExists(Question_Number,4)
-        //                 ? { backgroundColor: 'blue' }
-        //                 : {}
-        //             }
-        //           >
-        //             4
-        //           </td>
-        //           <td
-        //             onClick={() => this.button_Clicked(Question_Number, 5)}
-        //             style={
-        //               this.isAnswerExists(Question_Number,5)
-        //                 ? { backgroundColor: 'blue' }
-        //                 : {}
-        //             }
-        //           >
-        //             5
-        //           </td>
-
-        //           <td style = {{border : 0}}></td>
-        //           <td style = {{border : 0}}></td>
-        //           <td style = {{border : 0}}></td>
-        //         </div>
-        //       </tr>
-              
-        //     </tbody>
-        //   </table>
-        //   <div className='question-point-guide'>
-        //     <span className='low'>Stable </span>
-        //     <span className='high'>Unstable</span>
-        //   </div>
-
-        //   {/* Space between lines 
-        //   <hr></hr>
-        //   <br></br>
-        //   <br></br>
-        // </div> */}
-
-    
-    
-
-
-
-  
-  
-  // // Display quesiton parts
-  // displayQuestion = (quesitons_text, Question_Number) => {
-  //   return (
-  //     <div>
-  //       <div className='program-type-questions-point'>
-  //         <h4>{quesitons_text}</h4>
-  //         <table className='program-psychological-answer-table'>
-  //           <tbody>
-  //             <tr>
-  //               <div>
-  //                 {/* If Button is clicked */}
-  //                 <td style = {{border : 0}}></td>
-  //                 <td style = {{border : 0}}></td>
-  //                 <td style = {{border : 0}}></td>
-
-  //                 <td
-  //                   onClick={() => this.button_Clicked(Question_Number, 1)}
-  //                   style={
-  //                     this.isAnswerExists(Question_Number,1) ? { backgroundColor: 'blue' }: {} }
-  //                 >
-  //                   1
-  //                 </td>
-  //                 <td
-  //                   onClick={() => this.button_Clicked(Question_Number, 2)}
-  //                   style={
-  //                     this.isAnswerExists(Question_Number,2)
-  //                       ? { backgroundColor: 'blue' }
-  //                       : {}
-  //                   }
-  //                 >
-  //                   2
-  //                 </td>
-  //                 <td
-  //                   onClick={() => this.button_Clicked(Question_Number, 3)}
-  //                   style={
-  //                     this.isAnswerExists(Question_Number,3)
-  //                       ? { backgroundColor: 'blue' }
-  //                       : {}
-  //                   }
-  //                 >
-  //                   3
-  //                 </td>
-  //                 <td
-  //                   onClick={() => this.button_Clicked(Question_Number, 4)}
-  //                   style={
-  //                     this.isAnswerExists(Question_Number,4)
-  //                       ? { backgroundColor: 'blue' }
-  //                       : {}
-  //                   }
-  //                 >
-  //                   4
-  //                 </td>
-  //                 <td
-  //                   onClick={() => this.button_Clicked(Question_Number, 5)}
-  //                   style={
-  //                     this.isAnswerExists(Question_Number,5)
-  //                       ? { backgroundColor: 'blue' }
-  //                       : {}
-  //                   }
-  //                 >
-  //                   5
-  //                 </td>
-
-  //                 <td style = {{border : 0}}></td>
-  //                 <td style = {{border : 0}}></td>
-  //                 <td style = {{border : 0}}></td>
-  //               </div>
-  //             </tr>
-              
-  //           </tbody>
-  //         </table>
-  //         <div className='question-point-guide'>
-  //           <span className='low'>Stable </span>
-  //           <span className='high'>Unstable</span>
-  //         </div>
-
-  //         {/* Space between lines */}
-  //         <hr></hr>
-  //         <br></br>
-  //         <br></br>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
 
 
   render() {
