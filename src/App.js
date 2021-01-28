@@ -28,7 +28,8 @@ import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
 import SelfTest from './Pages/Self_Test_page';
 import TestingPage from './Pages/TestingJoonha';
-import TestResult from './Pages/Result'
+import TestResult from './Pages/reasultReader'
+
 
 //Import members profile
 import IntroYoon from './components/IntrodoingMember/Intro_yoon';
