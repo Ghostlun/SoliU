@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Footer from '../components/Footer';
 import Test from '../components/Self_Test'
-import { BarChart, Bar, XAxis, YAxis } from 'recharts';
+import { Tooltip, Legend, BarChart, Bar, XAxis, YAxis } from 'recharts';
 import Cookies, { get } from "js-cookie"
 
 
@@ -38,7 +38,6 @@ const Result = (props) => {
                 resultScore = dataSets[i] + resultScore
                 i = i + 1
             }
-            console.log("Depression score",  resultScore)
             return resultScore
         }
         else if (id === 2) {
@@ -48,7 +47,6 @@ const Result = (props) => {
                 resultScore = dataSets[i] + resultScore
                 i = i + 1
             }
-            console.log("Anxiety score",  resultScore)
             
             return resultScore
         }
@@ -60,7 +58,6 @@ const Result = (props) => {
                 resultScore = dataSets[i] + resultScore
                 i = i +1
             }
-            console.log("Stress score",  resultScore)
             return resultScore
     
         }
@@ -71,8 +68,7 @@ const Result = (props) => {
     function covertingToNumber (dataline) {
 
         var number_array = []
-
-        numb
+        number_array = dataline.split(',').map(Number)        
         
 
         return number_array
@@ -80,16 +76,17 @@ const Result = (props) => {
 
     function getAverage(id) {
 
+        // Firebase Data array
         var User_data_score_datalists = props.FireBase_Message
+        // Array_data_list
         var array_data
-        var inside_data
-        console.log(props.FireBase_Message)
-        var scoreFor_Average = 0
-        var send_data
-        
-        // Map converting
-        // let numberArray = stringArray.map(Number)
 
+        var Number_of_array = User_data_score_datalists.length
+
+        var scoreFor_Average = 0
+
+        var Depress_Sum = 0 , Anxiety_Sum = 0, Stress_Sum = 0
+                
 
         // Fireabse all Users data
         for (array_data in User_data_score_datalists) { 
@@ -97,55 +94,82 @@ const Result = (props) => {
             // Get data from send data
 
             var dataline = User_data_score_datalists[array_data].send_data
-            
-
+            // Data converting
             console.log("Data line ", dataline)
+            var dataline_to_array = covertingToNumber(dataline)
+
             switch(id){
                 
                 // Depression
                 case 1:
-                    for(var i=0; i < 5; i++) {
+                    for(var i = 0; i < 5; i++) {
                         
-                        // scoreFor_Average = scoreFor_Average + numberArray[i]
+                        Depress_Sum = Depress_Sum + dataline_to_array[i]
                     }
-
-
+                    console.log("Score for Depression", Depress_Sum)
+                    console.log("Data line array", dataline_to_array)
                    break
-            //     //Anxiety
-            //     case 2:
+                //Anxiety
+                case 2:
 
-            //         for(var i=5; i < 10; i++) {
+                    for(var i = 5; i < 10; i++) {
                         
-            //             scoreFor_Average = scoreFor_Average + User_data_score_datalists[i].send_data
-            //         }
+                        Anxiety_Sum = Anxiety_Sum + dataline_to_array[i]
+                    }
+                    
+                    console.log("Anxiety for Sum", Anxiety_Sum)
 
-            //         return scoreFor_Average/5
+                    
+                break
+                    // Stress
+                case 3:
 
-            // break
-            //         // Stress
-            //     case 3:
-
-            //         for(var i=0; i < 15; i++) {
+                    for(var i=10; i < 15; i++) {
                         
-            //             scoreFor_Average = scoreFor_Average + User_data_score_datalists[i].send_data
-            //         }
+                        Stress_Sum = Stress_Sum + dataline_to_array[i]
+                    }
+                
+                    console.log("Stress for Depression", Stress_Sum)
 
-            //         return scoreFor_Average/5
-
-            // break
-
-        }
+                
+            break
 
         }
 
         
-        console.log(scoreFor_Average)
-        return scoreFor_Average/5
+
+    }
+        
+       
+       var output = 0
+
+        if (id == 1) {
+
+            output = (Depress_Sum / Number_of_array ).toFixed(2)
+            console.log("Depress_Sum" , Depress_Sum)
+            return output
+        }
+        else if (id == 2) {
+            output = (Anxiety_Sum / Number_of_array).toFixed(2) 
+            console.log("Depress_Sum", Anxiety_Sum)
+
+            return output
+
+        }
+        else if (id == 3) {
+
+            output = (Stress_Sum / Number_of_array).toFixed(2)
+            console.log("Stress_Sum,", Stress_Sum)
+            return output
+        }
+
+        
+        
+
     }
 
 
     const type = [
-        {userName: ""},
         {name: 'Depression', result: calculateResult(1), average: getAverage(1) },
         {name: 'Anxiety', result: calculateResult(2), average: getAverage(2) },
         {name: 'Stress', result: calculateResult(3), average: getAverage(3) },
@@ -158,31 +182,34 @@ const Result = (props) => {
         <div>
              <div>
         <center>
-       <div style = {{fontWeight : 'bold', fontSize : '20pt'}}> Here is your Results User name : {props.childMessage} </div>
+       <div style = {{fontWeight : 'bold', fontSize : '30pt'}}> Mental-Health Test Result for  {props.childMessage}</div>
 
 
         <BarChart width={900} height={450} data={type}
-        margin = {{top :20, right : 30, left: 20, bottom :5}}
+        margin = {{top :30, right : 30, left: 20, bottom :5}}
         >
-        <XAxis dataKey = "name"  />
-        <YAxis />
+        <XAxis dataKey = "name"  style = { {fontWeight : "bold"}} />
+        <YAxis  domain = {[0,25]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}
+                style = {{fontWeight : "bold"}} />
 
+
+        <Tooltip />
+        <Legend />
+        
         <Bar dataKey="result" fill = "#55DB44" barSize = {50}>
         </Bar>
 
         <Bar dataKey = "average" fill = "#3354DB" barSize = {50}>
         
         </Bar>
+
        
         </BarChart> 
         
-        <div>
-            <div style = {{color : "green" , display : 'inline' , fontWeight : 'bold'}}> green bar </div >shows your score
-
-        </div>
-        
-        <div>
-            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' }}> blue bar </div>shows average score
+        <div  className = "Result_text">
+            <div style = {{color : "green" , display : 'inline' , fontWeight : 'bold'}}> Green bar </div >shows your score
+            <br></br>
+            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' ,  fontSize : "50sp "}}> Blue bar </div>shows your average score
         </div>
         
         <Footer/>
@@ -197,83 +224,3 @@ const Result = (props) => {
 
 export default Result
 
-
-
-
-// export default class Result extends Component{
-
-//     constructor(props){
-//         super(props)
-
-//         this.state = {
-//             persons : [],
-//             type :[
-//                 {name: 'Depression', result: this.calculateResult(1), average: this.getAverage() },
-//                 {name: 'Anxiety', result: this.calculateResult(2), average: this.getAverage() },
-//                 {name: 'Stress', result: this.calculateResult(3), average: this.getAverage() },
-            
-//             ]
-            
-//          }
-
-
-//     }
-
-//     getAverage = () => {
-
-//         var data = this.props.FireBase_Message
-
-//         console.log(data)
-
-//     }
-
-   
-
-//     calculateResult = (id) => {
-
-
-         
-//     }
-        
-    
-
-// render () {
-    
-//  return (
-    // <div>
-    //     <center>
-    //         <div> {this.props.FireBase_Message.map(home => <div>{home.send_data}</div>)}</div>
-    //    <div style = {{fontWeight : 'bold', fontSize : '20pt'}}> Here is your Results User name : {this.props.childMessage} </div>
-
-
-    //     <BarChart width={900} height={450} data={this.state.type}
-    //     margin = {{top :20, right : 30, left: 20, bottom :5}}
-    //     >
-    //     <XAxis dataKey = "name"  />
-    //     <YAxis />
-
-    //     <Bar dataKey="result" fill = "#55DB44" barSize = {50}>
-    //     </Bar>
-
-    //     <Bar dataKey = "average" fill = "#3354DB" barSize = {50}>
-        
-    //     </Bar>
-       
-    //     </BarChart> 
-        
-    //     <div>
-    //         <div style = {{color : "green" , display : 'inline' , fontWeight : 'bold'}}> green bar </div >shows your score
-
-    //     </div>
-        
-    //     <div>
-    //         <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' }}> blue bar </div>shows average score
-    //     </div>
-        
-    //     <Footer/>
-    //     </center>
-
-    // </div>
-//     )
-// }
-// }
