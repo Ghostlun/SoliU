@@ -4,6 +4,7 @@ import LoadingScreen from './../Learn/Mental_App_LoadingScreen';
 import MainOptionScreen from './../Learn/Mental_App_MainOptionScreen';
 import Cookies from "js-cookie"
 
+
 class Mental_App_Main extends Component {
   constructor(props) {
     super(props)
@@ -30,13 +31,13 @@ class Mental_App_Main extends Component {
 
         <center>
          <div class='container_for_Mental_Main'>
-           <LoadingScreen></LoadingScreen> 
+           <LoadingScreen/> 
          </div>
         </center>
        :
         <center>
          <div class='container_for_Mental_Main'>
-          <MainOptionScreen></MainOptionScreen> 
+          <MainOptionScreen/> 
         </div>
         </center>
     
