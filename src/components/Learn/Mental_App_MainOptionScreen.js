@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import BrainImg from '../../asset/image/main2.png';
 import { Link } from 'react-router-dom';
-import Loading from '../../components/Learn/Mental_App_LoadingScreen'
 import '../../asset/css/style.css'
 
 
@@ -30,9 +29,9 @@ const MainOptionScreen = () => {
           />
         </div>
 
-      
+      <div style = {{marginTop : '30px'}}>
           <Link to='/research/mental_app/information'> 
-            <button className='btn-mental-main'>
+            <button className='btn-mental-main' >
                 LEARN
             </button>
           </Link>
@@ -40,23 +39,19 @@ const MainOptionScreen = () => {
       
           <Link to='/research/mental_app/self_test'>
             <button className='btn-mental-main'>
-              <text style={{ color: 'white' }}>SELF TEST</text>
+              Self-Test
             </button>
           </Link>
 
-          <Link to='/research/mental_app/chat'>
-            <button className='btn-mental-main'>
-              <text style={{ color: 'white' }}>CHAT</text>
-            </button>
-          </Link>
+         
 
           <Link to='/research/mental_app/resource_center'>
             <button className='btn-mental-main'>
-              <text style={{ color: 'white' }}>RESOURCE CENTER</text>
+              Resource Center
             </button>
           </Link>
 
-
+          </div>
       </div>
       
   );
