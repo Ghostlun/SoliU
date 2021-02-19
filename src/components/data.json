@@ -18,35 +18,12 @@
   {
     "id": 3,
     "Name": "Dependence",
-    "info" : "Dependence isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
+    "info" : "Sorry It is not updated yet"
   },
   {
     "id": 4,
     "Name": "Depression",
-    "info" : "Depression isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
-  },
-  {
-    "id": 5,
-    "Name": "Dysthymia",
-    "info" : "Dysthymia is known as persistent depression disorder, have many symptoms including depressed mood, low energy, disturbed sleep, and poor concentration. These symptoms lead to more severe conditions such as poor appetite, weight change, hopelessness, excessive guilt, and thoughts of death and suicide"
+    "info" : "Sorry, It is not updated yet"
   }
-  ,
-  {
-    "id": 6,
-    "Name": "Panic",
-    "info" : "Panic isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
-  }
-  ,
-  {
-    "id": 7,
-    "Name": "Hobia",
-    "info" : "Hobia isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
-  }
-  ,
-  {
-    "id": 8,
-    "Name": "Stress",
-    "info" : "Stress isblblablablabalbalbalbalablablabalbalablablabalbalbalablablaba"
-  }
-
+ 
 ]

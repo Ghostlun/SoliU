@@ -5,33 +5,32 @@ import { Tooltip, Legend, BarChart, Bar, XAxis, YAxis } from 'recharts';
 import Cookies, { get } from "js-cookie"
 
 
-const colors = ["#DB4455", '#3354DB', '#55DB44']
 
-
-// 여러가지 문제가 있다; 
-// 문제 1: 데이터를 가져오지 못함
-
-// @flow strict
 
 
 
 const Result = (props) => {
 
-    function calculateResult (id)  {
 
+    const type = [
+        {name: 'Depression', result: calculateResult(1), average: getAverage(1) },
+        {name: 'Anxiety', result: calculateResult(2), average: getAverage(2) },
+        {name: 'Stress', result: calculateResult(3), average: getAverage(3) },
+        {name: 'Total Average', result : calculateResult(4), average : getAverage(4)}
+
+                    
+                    ]
+
+
+    function calculateResult (id)  {
 
         var resultScore = 0
         var value = Cookies.get("result")
         // 데이터 변환
         let dataSets = JSON.parse(value)
-
-        var userName = Cookies.get("user")
-
         var resultScore = 0
         
-
         if (id === 1){
-    
             var i = 0 
             while (i < 5) {
     
@@ -51,7 +50,7 @@ const Result = (props) => {
             return resultScore
         }
     
-        else {
+        else if (id === 3) {
             
             var i = 10
             while (i < 15) {
@@ -61,6 +60,21 @@ const Result = (props) => {
             return resultScore
     
         }
+
+        else if ( id == 4) {
+
+            var i = 0 
+            while (i<15) {
+
+                resultScore = dataSets[i] + resultScore
+                i = i + 1
+            }
+
+
+            return (resultScore/3).toFixed(2)
+        }
+
+        else return 0
       
         
     }
@@ -83,9 +97,7 @@ const Result = (props) => {
 
         var Number_of_array = User_data_score_datalists.length
 
-        var scoreFor_Average = 0
-
-        var Depress_Sum = 0 , Anxiety_Sum = 0, Stress_Sum = 0
+        var Depress_Sum = 0 , Anxiety_Sum = 0, Stress_Sum = 0, averageSum = 0
                 
 
         // Fireabse all Users data
@@ -95,7 +107,6 @@ const Result = (props) => {
 
             var dataline = User_data_score_datalists[array_data].send_data
             // Data converting
-            console.log("Data line ", dataline)
             var dataline_to_array = covertingToNumber(dataline)
 
             switch(id){
@@ -106,8 +117,7 @@ const Result = (props) => {
                         
                         Depress_Sum = Depress_Sum + dataline_to_array[i]
                     }
-                    console.log("Score for Depression", Depress_Sum)
-                    console.log("Data line array", dataline_to_array)
+            
                    break
                 //Anxiety
                 case 2:
@@ -117,7 +127,6 @@ const Result = (props) => {
                         Anxiety_Sum = Anxiety_Sum + dataline_to_array[i]
                     }
                     
-                    console.log("Anxiety for Sum", Anxiety_Sum)
 
                     
                 break
@@ -128,15 +137,15 @@ const Result = (props) => {
                         
                         Stress_Sum = Stress_Sum + dataline_to_array[i]
                     }
-                
-                    console.log("Stress for Depression", Stress_Sum)
+                break
 
-                
-            break
+                case 4 :
+                    for (var i = 0; i <15; i++) {
+                        
+                        averageSum = averageSum +  dataline_to_array[i]
 
+                    }
         }
-
-        
 
     }
         
@@ -146,12 +155,10 @@ const Result = (props) => {
         if (id == 1) {
 
             output = (Depress_Sum / Number_of_array ).toFixed(2)
-            console.log("Depress_Sum" , Depress_Sum)
             return output
         }
         else if (id == 2) {
             output = (Anxiety_Sum / Number_of_array).toFixed(2) 
-            console.log("Depress_Sum", Anxiety_Sum)
 
             return output
 
@@ -159,30 +166,116 @@ const Result = (props) => {
         else if (id == 3) {
 
             output = (Stress_Sum / Number_of_array).toFixed(2)
-            console.log("Stress_Sum,", Stress_Sum)
             return output
         }
 
-        
-        
+        else if ( id == 4) {
+
+            output = (averageSum/Number_of_array/3).toFixed(2)
+
+            return output
+        }
 
     }
 
+    // Depression, Anxiety, Stress
+    function labelDisplay (label) {
+        var label, currentScoreShow,averageScoreShow
+        var dataTurple = [label, currentScoreShow, averageScoreShow]
 
-    const type = [
-        {name: 'Depression', result: calculateResult(1), average: getAverage(1) },
-        {name: 'Anxiety', result: calculateResult(2), average: getAverage(2) },
-        {name: 'Stress', result: calculateResult(3), average: getAverage(3) },
+        if (label  === 'Depression') {
+            currentScoreShow = type[0].result
+            averageScoreShow = type[0].average
+            return dataTurple  = [label, currentScoreShow, averageScoreShow]
+        }
+        else if (label === 'Anxiety') {
+            currentScoreShow = type[1].result
+            averageScoreShow = type[1].average
+            return dataTurple  = [label, currentScoreShow, averageScoreShow]
+        }
+        else if (label === 'Stress') {
+            currentScoreShow = type[2].result
+            averageScoreShow = type[2].average
+            return dataTurple  = [label, currentScoreShow, averageScoreShow]
+        }
+
+        else if (label === 'Total Average') {
+            currentScoreShow = type[3].result
+            averageScoreShow = type[3].average
+            return dataTurple  = [label, currentScoreShow, averageScoreShow]
+        }
+
+        else {
+            
+            return
+        }        
+
+    }
+
+    function CustomToolTip ({active, payload, label}) {
+        
+        var data 
+        if (active)  {
+             
+                if (label === 'Depression')
+                 {   data = labelDisplay(label)
+                    return <div className = 'toolBox'>
+                     Your Depression Score :   {data[1]} <br/>
+                     Your Average Score : {data[2]}
+                    </div>
+                 }
+                else if (label === 'Anxiety') {
+                    data = labelDisplay(label)
+                    return <div className = 'toolBox'>
+                    Your Anxiety Score :  {data[1]} <br/>
+                    Your Average Score  : {data[2]}
+                    </div>
+                }
+                   
+                else if (label === 'Stress') {
+                    data = labelDisplay(label)
+                    return <div className = 'toolBox'>
+                    Your Stress Score :  {data[1]} <br/>
+                    Your Average Score :  {data[2]}
+                    </div> }
                     
-                    ]
+                else if (label === 'Total Average') {
+                  
+                    data = labelDisplay(label)
+                    return <div className = 'toolBox'>
+                            This is Average score of your three scores
+                            <div style ={{fontWeight : "bold"}}> Your score average is  {data[1]} </div>
+                            <div  style = {{fontWeight : "bold"}}> Your  average score is  {data[2]} </div>
+                            </div>
+                    }
+    
+                else return <div>
+                    Score : {type.name}
+                </div>
+        }
 
-    const game = 1
+        else {
+            return null
+        }
+    }
+
+   
+  
 
     return(
         <div>
              <div>
         <center>
+
+
        <div style = {{fontWeight : 'bold', fontSize : '30pt'}}> Mental-Health Test Result for  {props.childMessage}</div>
+
+
+       <div  className = "Result_text">
+            <div style = {{color : "orange" , display : 'inline' , fontWeight : 'bold'}}> Orange bar </div >shows your score
+            <br></br>
+            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' ,  fontSize : "50sp "}}> Blue bar </div>shows your past average score
+        </div>
 
 
         <BarChart width={900} height={450} data={type}
@@ -193,10 +286,11 @@ const Result = (props) => {
                 style = {{fontWeight : "bold"}} />
 
 
-        <Tooltip />
+
+        <Tooltip content = {CustomToolTip} />
         <Legend />
         
-        <Bar dataKey="result" fill = "#55DB44" barSize = {50}>
+        <Bar dataKey="result" fill = "orange" barSize = {50}>
         </Bar>
 
         <Bar dataKey = "average" fill = "#3354DB" barSize = {50}>
@@ -206,11 +300,7 @@ const Result = (props) => {
        
         </BarChart> 
         
-        <div  className = "Result_text">
-            <div style = {{color : "green" , display : 'inline' , fontWeight : 'bold'}}> Green bar </div >shows your score
-            <br></br>
-            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' ,  fontSize : "50sp "}}> Blue bar </div>shows your average score
-        </div>
+     
         
         <Footer/>
         </center>

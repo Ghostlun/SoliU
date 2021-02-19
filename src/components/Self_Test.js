@@ -83,9 +83,6 @@ export default class Self_test extends Component {
       alert("Your names contains #,&,@")
     }
 
-
-   
-
     // Data send to firebase
     if (dataReady== 1) {
       let messageREf = fireabse
@@ -109,12 +106,6 @@ export default class Self_test extends Component {
         isReady: 'false',
         submitted : 'true'
     });
-
-    // console.log ("Window href", window.location.hostname)
-    // var currentPage = window.location.hostname + "/result"
-    // console.log("Current Page", currentPage)
-    
-    // window.location.assign(currentPage)
 
   };
 

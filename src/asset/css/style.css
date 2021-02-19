@@ -206,3 +206,11 @@ label {
   display: inline;
   font-weight: bold;
 }
+
+.toolBox {
+
+  background-color: antiquewhite;
+  font : bold;
+  font-size : 13;
+  width: auto;
+}

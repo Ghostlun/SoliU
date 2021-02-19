@@ -28,7 +28,7 @@ import OtherApp from './components/Learn/Other_App';
 import Test from './Pages/Test';
 import SelfTest from './Pages/Self_Test_page';
 import TestingPage from './Pages/TestingJoonha';
-import TestResult from './Pages/reasultReader'
+import TestResult from './Pages/resultRender'
 
 
 //Import members profile

@@ -47,6 +47,8 @@ class Mental_App_Self_Test_Main extends React.Component {
 
   }
 
+
+
   onChangeInputBox = (e) => {
 
     this.setState({
@@ -54,9 +56,14 @@ class Mental_App_Self_Test_Main extends React.Component {
       [e.target.name] : e.target.value
     })
     
-  
   }
 
+  takeTestButton = () => {
+
+    
+    
+    
+  }
   
 
   
@@ -108,7 +115,7 @@ class Mental_App_Self_Test_Main extends React.Component {
       </form>
         <div>
           <Link to='/selfTest'>
-            <button className='btn-mental-main'>
+            <button onClick = {this.takeTestButton}className='btn-mental-main'>
                 Take Test
             </button>
           </Link>

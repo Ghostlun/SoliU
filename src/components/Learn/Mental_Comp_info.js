@@ -18,15 +18,12 @@ export default class Mental_Comp_info extends Component {
     var MentalID = id;
     var MentalInfo = info;
 
-    console.log('Button id', id);
-
     this.setState({
       Mouseclicked: 'true',
       Menta_Id: MentalID,
       Mental_Info: MentalInfo
     });
 
-    console.log('Is button clicked ???', this.state.Mouseclicked);
   };
 
   Menu_button_Clicked = () => {
