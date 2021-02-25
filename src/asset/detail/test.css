@@ -41,7 +41,7 @@ table {
 }
 
 * {
-    -webkit-user-select: none;
+    -webkit-user-select: text;
     -webkit-touch-callout: none;
     -webkit-font-smoothing: antialiased;
     overscroll-behavior-y: none;

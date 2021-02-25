@@ -17,24 +17,37 @@ class Navigation extends Component {
             <NavLink className='d-inline p-2 bg-white text-black' to='/'>
               HOME
             </NavLink>
+
+            <NavLink
+              className='d-inline p-2 bg-white text-black'
+              to='/publications'
+            >
+              Dr. Chon
+            </NavLink>
+            
             <NavLink className='d-inline p-2 bg-white text-black' to='/members'>
               MEMBERS
             </NavLink>
+
+            <NavLink className='d-inline p-2 bg-white text-black' to='/research/mental_app' >
+              Mental-App
+            </NavLink>
+
             <NavLink
               className='d-inline p-2 bg-white text-black'
               to='/research'
             >
               RESEARCH
             </NavLink>
-            <NavLink
-              className='d-inline p-2 bg-white text-black'
-              to='/publications'
-            >
-              PUBLICATIONS
-            </NavLink>
+
+       
+           
             <NavLink className='d-inline p-2 bg-white text-black' to='/contact'>
               CONTACT
             </NavLink>
+
+            
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

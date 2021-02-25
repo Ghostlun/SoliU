@@ -2,6 +2,7 @@ import React from 'react';
 import SelfPic from '../../asset/image/selftest.png';
 import { Link } from 'react-router-dom';
 import '../../asset/css/style.css';
+import Cookies, { get } from "js-cookie"
 
 
 // @flow strict
@@ -55,11 +56,14 @@ class Mental_App_Self_Test_Main extends React.Component {
       
       [e.target.name] : e.target.value
     })
-    
+
+    console.log(this.state.Id)
   }
 
   takeTestButton = () => {
 
+    var userName = this.state.Id
+    var age = this.state.Age
     
     
     

@@ -214,3 +214,25 @@ label {
   font-size : 13;
   width: auto;
 }
+
+.info {
+  margin : 5;
+  padding-left : 5;
+  display: inline-block
+}
+
+h4 {
+  font-weight: bold;
+}
+
+.paragraph {
+  
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+content {
+  
+  line-height: 1.8;
+  user-select: text
+}

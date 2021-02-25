@@ -84,7 +84,6 @@ const Result = (props) => {
         var number_array = []
         number_array = dataline.split(',').map(Number)        
         
-
         return number_array
     }
 
@@ -221,14 +220,14 @@ const Result = (props) => {
                  {   data = labelDisplay(label)
                     return <div className = 'toolBox'>
                      Your Depression Score :   {data[1]} <br/>
-                     Your Average Score : {data[2]}
+                     Your Daily average Score : {data[2]}
                     </div>
                  }
                 else if (label === 'Anxiety') {
                     data = labelDisplay(label)
                     return <div className = 'toolBox'>
                     Your Anxiety Score :  {data[1]} <br/>
-                    Your Average Score  : {data[2]}
+                    Your Daily average Score  : {data[2]}
                     </div>
                 }
                    
@@ -236,7 +235,7 @@ const Result = (props) => {
                     data = labelDisplay(label)
                     return <div className = 'toolBox'>
                     Your Stress Score :  {data[1]} <br/>
-                    Your Average Score :  {data[2]}
+                    Your Daily average Score :  {data[2]}
                     </div> }
                     
                 else if (label === 'Total Average') {
@@ -264,9 +263,8 @@ const Result = (props) => {
 
     return(
         <div>
-             <div>
+            <div>
         <center>
-
 
        <div style = {{fontWeight : 'bold', fontSize : '30pt'}}> Mental-Health Test Result for  {props.childMessage}</div>
 
@@ -274,7 +272,7 @@ const Result = (props) => {
        <div  className = "Result_text">
             <div style = {{color : "orange" , display : 'inline' , fontWeight : 'bold'}}> Orange bar </div >shows your score
             <br></br>
-            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' ,  fontSize : "50sp "}}> Blue bar </div>shows your past average score
+            <div style = {{color : "blue" , display :'inline', fontWeight : 'bold' ,  fontSize : "50sp "}}> Blue bar </div>shows your daily average score
         </div>
 
 

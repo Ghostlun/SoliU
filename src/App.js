@@ -92,6 +92,7 @@ const App = () => {
           <Route path='/research/others/dahye' component={IntroDaHye} exact />
 
           <Route path='/test' component={Test} exact />
+          
           <Route path='/selfTest' component={SelfTest} />
 
           <Route path='/testingjoonha' component={TestingPage} />
