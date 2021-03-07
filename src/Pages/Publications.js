@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import '../asset/css/style.css'
+import image from '../asset/image/Dr_Chon.png'
 
 const Publications = () => {
   return (
@@ -9,31 +10,33 @@ const Publications = () => {
 <div>
   <div className = "info"> 
     
-    <div>
+    {/* Infomration */}
+    <div> 
 
       <div>
         {/* Title page */}
-        <h1><b>Publications</b></h1>
-
+        <h1><b>Professor</b></h1>
       </div>
 
       <div>
         {/* Reaserach Paragraph 1 : Current Reaserach  */}
-          <h4>Current Research</h4>
-          
-          <h5><b>Title: </b> Mental health issues and mobile healthcare: the effects of chatting app to increase accessibility and engagement of health resources on college campus 
-          </h5>
+          <h4><b>Who is Dr. Chon?</b></h4>
+      </div>
 
-          <h5><b>Purpose: </b> This study is to examine the role of mobile application to increase accessibility and engagement of health resources
-          </h5>
-          </div>
+      <div>
+        <div style = {{marginTop: 10}}>Myoung-Gi Chon is an assistant professor at School of Communication and Journalism, Auburn University. He received Ph.D. degree, mass communication and public affairs from the Manship School of Communication at Louisiana State University (May, 2017). He earned his M.A. in Mass communication and Journalism and Bachelor’s degree in English Language and Literature from Korea University.</div> 
+        <div style = {{marginTop: 10}}>Before coming to the U.S., in fall 2013, he was a researcher at Korea Research Center (KRC) in Seoul, South Korea. He conducted projects related to political and social issues in the public sector. He also participated in projects of utilizing Big-data to solve problems from the view of social science. </div>
+        <div style = {{marginTop: 10}}>His primary research interests lie in Risk-Crisis Communication , Health Communication, and Public Diplomacy. He focus on how to find solutions on social and political problems based on communicative behaviors of publics. He also expands his research interest to public diplomacy by exploring how PR theories can be applied into public diplomacy issues. </div>
+      </div>
 
-    </div>
+
+    </div> 
+
 
 
       <div className = "paragraph">
           {/*Research Paragraph 2  : Honors and Awards*/}
-       <h4>Honors & Awards</h4>
+       <h4><b>Honors & Awards</b></h4>
         <content>
           <div>2020: International Public Relations Research Conference (IPRRC), Koichi Yamamura International Strategic Communication Award (Solo author / $1,000) </div>
           <div> 2019: The Corey Edwards Organization Advisor of the Year Award, Auburn University</div>
@@ -47,7 +50,7 @@ const Publications = () => {
     
     {/* Reserach Paragraph 3 : Journal Awards */}
     <div className = "paragraph">
-    <h4>Journal Articles</h4>
+    <h4><b>Journal Articles</b></h4>
       <content >
       <li>Chon, M. & Park, H. (2020). Social media activism in the digital age: Testing an integrative model of activism on contentious issues. Journalism & Mass Communication Quarterly 97(1) 72-97.
       <a href=" https://doi.org/10.1177/1077699019835896"style ={{marginLeft : 10}}>link</a> </li>
