@@ -20,6 +20,8 @@ import MentalAppSelfTestMain from './components/Learn/Mental_App_Self_Test_Main'
 import MentalAppResourceCenter from './components/Learn/Mental_App_Resource_Center';
 import MentalAppChat from './components/Learn/Mental_App_Chat';
 import MEMBERS from './Pages/Members';
+import Gallery from './Pages/Gallery';
+
 import LoadingScreen from './components/Learn/Mental_App_LoadingScreen';
 import MainOptionScreen from './components/Learn/Mental_App_MainOptionScreen';
 
@@ -72,6 +74,10 @@ const App = () => {
           />
           <Route path='/research/others' component={OtherApp} exact />
           <Route path='/contact' component={Contact} exact />
+          <Route path='/gallery' component={Gallery} exact/>
+    
+       
+          
 
           {/* <Route path='/lab' component={Lab} exact /> */}
           <Route path='/publications' component={PUBLICATIONS} exact />

@@ -59,15 +59,8 @@ export default class  Intro_joonha extends Component  {
         {/* Buttons */}
         <div className = 'btn-grid-Indiv_Info'>
 
-        <button className='btn-mental-main'>
-              <text style={{ color: 'white' }}>About Me</text>         
-        </button>
 
-
-
-        <button className='btn-mental-main'>
-          <text style={{ color: 'white' }}>My Resume</text>           
-        </button>
+        
         </div>
       </div>
           

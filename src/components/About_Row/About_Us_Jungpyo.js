@@ -1,5 +1,5 @@
 import React from 'react';
-import Pic from '../../asset/image/jungpyo_Hong.png';
+import Pic from '../../asset/image/jungpyo_Hong.jpg';
 import { Link } from 'react-router-dom';
 
 const About_Us_Jungpyo = () => {

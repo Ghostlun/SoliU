@@ -46,6 +46,9 @@ class Navigation extends Component {
               CONTACT
             </NavLink>
 
+            <NavLink className='d-inline p-2 bg-white text-black' to='/gallery'>
+              Gallery
+            </NavLink>
             
 
           </Nav>

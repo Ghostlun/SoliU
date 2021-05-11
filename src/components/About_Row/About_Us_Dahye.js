@@ -1,5 +1,5 @@
 import React from 'react';
-import Pic from '../../asset/image/dahae_Kim.png';
+import Pic from '../../asset/image/dahae_Kim.jpg';
 import { Link } from 'react-router-dom';
 
 const About_Us_Dahye = () => {

@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'NanumBarunGothic';
-    src: url('/assets/fonts/NanumBarunGothicSubset.woff2') format('woff2');
+    src: url('/src/asset/fonts/NanumBarunGothicSubset.woff2') format('woff2');
 
     /*font-family: 'NotoSansKR';*/
     /*src: url('/assets/fonts/NotoSansKR-Regular.woff') format('woff2');*/
@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: 'NanumBarunGothic';
-    src: url('/assets/fonts/NanumBarunGothicBoldSubset.woff2') format('woff2');
+    src: url('/src/asset/fonts/NanumBarunGothicBoldSubset.woff2') format('woff2');
 
     /*font-family: 'NotoSansKR';*/
     /*src: url('/assets/fonts/NotoSansKR-Medium.woff') format('woff2');*/
@@ -1928,6 +1928,12 @@ input[type="checkbox"].checkbox-type-square:checked::-ms-check {
     -webkit-box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.3);
             box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.3);
     background: #fff;
+}
+
+.main-pic-img-set {
+    width: 1100px;
+    height: 407.35px;
+    object-fit: cover;
 }
 
 .popup-pic-guide__btn {
