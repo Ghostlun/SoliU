@@ -1,5 +1,5 @@
 import React from 'react';
-import Pic from '../../asset/image/joonha_Kim.png';
+import Pic from '../../asset/image/joonha_Kim.jpg';
 import { Link } from 'react-router-dom';
 
 const About_Us_Joonha = () => {
@@ -11,6 +11,7 @@ const About_Us_Joonha = () => {
           alt='Pic'
           style={{
             width: '250px',
+            height: 'auto'
           }}
         />
       </div>
