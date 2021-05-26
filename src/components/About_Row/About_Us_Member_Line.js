@@ -1,7 +1,8 @@
 import React from 'react';
 
 import FirstProfile from './About_Us_Joonha';
-import SecondProfile from './About_Us_John_Long';
+import SecondProfile from './About_Us_Haegang';
+import ThridProfile from './About_Us_John_Long';
 const About_Us = () => {
   return (
     <div>
@@ -19,9 +20,9 @@ const About_Us = () => {
         <div>
           <SecondProfile />
         </div>
-        {/* <div>
+        <div>
           <ThridProfile />
-        </div> */}
+        </div>
       </div>
 
       
