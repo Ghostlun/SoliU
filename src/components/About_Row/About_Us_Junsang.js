@@ -1,8 +1,8 @@
 import React from 'react';
-import Pic from '../../asset/image/haegang_Yang.jpg';
+import Pic from '../../asset/image/face_no.jpg';
 import { Link } from 'react-router-dom';
 
-const About_Us_Haegang = () => {
+const About_Us_Junsang = () => {
   return (
     <div>
       <div>
@@ -16,14 +16,12 @@ const About_Us_Haegang = () => {
         />
       </div>
       <div>
-        <h3>Haegang Yang</h3>
-        <h4>Vice President / Developer</h4>
-        <h6>Auburn University '21 </h6>
-
-
+        <h3>Junsang Lee</h3>
+        <h4>Intern</h4>
+        <h6> junsang2003lee@gmail.com </h6>
       </div>
     </div>
   );
 };
 
-export default About_Us_Haegang;
+export default About_Us_Junsang;

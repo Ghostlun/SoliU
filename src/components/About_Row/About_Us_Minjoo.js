@@ -16,7 +16,7 @@ const About_Us_Minjoo = () => {
         <h3>Minju Jo</h3>
         <h4>Web/App Designer</h4>
         <h6>Auburn University '21 </h6>
-        <h6> Environmental design major Psychology major</h6>
+        <h6> Environmental design / Psychology major</h6>
 
         <h6> mzj0038@auburn.edu </h6>
         <h6> 334) 306-0891</h6>

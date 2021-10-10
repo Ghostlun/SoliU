@@ -11,18 +11,17 @@ const About_Us_Joonha = () => {
           alt='Pic'
           style={{
             width: '250px',
-            height: 'auto'
+            height: '250px'
           }}
         />
       </div>
       <div>
         <h3>Joonha Kim</h3>
-        <h4>Developer</h4>
+        <h4>President / Web Developer</h4>
         <h6>Auburn University '21 </h6>
         <h6>Software Engineering major</h6>
-
         <h6> jzk0121@auburn.edu </h6>
-        <h6> 334) 235-5728</h6>
+        <h6> 334) 312-7415</h6>
         <Link to='research/others/joonha'>More Info</Link>
       </div>
     </div>
