@@ -10,7 +10,7 @@
     "bootstrap": "^4.5.2",
     "emailjs-com": "^2.6.3",
     "extend": "^3.0.2",
-    "firebase": "^7.17.2",
+    "firebase": "^7.24.0",
     "firebase-tools": "^8.7.0",
     "google-map-react": "^2.1.8",
     "google-maps-react": "^2.0.6",
